@@ -9,9 +9,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@mcpstack/docs": ["../src/index.ts"],
-      "@mcpstack/docs/*": ["../src/*"],
-      "@mcpstack/docs/styles.css": ["../src/styles.css"]
+      "@agenetix/docs": ["../src/index.ts"],
+      "@agenetix/docs/*": ["../src/*"],
+      "@agenetix/docs/styles.css": ["../src/styles.css"]
     },
     "noEmit": true
   },

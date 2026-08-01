@@ -47,7 +47,7 @@
       "primaryCta": "开始使用",
       "secondaryCta": "查看 GitHub",
       "terminalLabel": "终端",
-      "installCommand": "npm install @mcpstack/docs",
+      "installCommand": "npm install @agenetix/docs",
       "layoutsHeading": "一个布局，灵活的文档框架",
       "layoutsDescription": "通过主题预设、强调色调节、密度、外壳尺寸、token 覆盖，以及可选的自定义头部和侧栏覆盖来塑造体验。",
       "exploreLabel": "探索",

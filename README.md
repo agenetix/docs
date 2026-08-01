@@ -1,6 +1,6 @@
 # MCP Stack Docs
 
-`@mcpstack/docs` is an App Router-native MDX docs library for Next.js.
+`@agenetix/docs` is an App Router-native MDX docs library for Next.js.
 
 It is built for teams that want documentation content in the repo while still getting SEO-friendly prerendered routes, locale-aware file conventions, search, heading extraction, mobile-friendly docs UX, and a configurable docs shell that can either stay simple or plug into a richer app chrome.
 
@@ -39,13 +39,13 @@ The example site ships with a polished docs shell and an optional live theme stu
 ## Install
 
 ```bash
-npm install @mcpstack/docs
+npm install @agenetix/docs
 ```
 
 Then import the shared stylesheet once in your docs layout:
 
 ```tsx
-import "@mcpstack/docs/styles.css";
+import "@agenetix/docs/styles.css";
 ```
 
 ## Quick start
@@ -56,7 +56,7 @@ Create `lib/docs.ts`:
 
 ```ts
 import path from "node:path";
-import { createDocsSource } from "@mcpstack/docs";
+import { createDocsSource } from "@agenetix/docs";
 
 export const docsSource = createDocsSource({
   contentDir: path.join(process.cwd(), "content/docs"),
@@ -75,8 +75,8 @@ export const docsSource = createDocsSource({
 Create `app/docs/layout.tsx`:
 
 ```tsx
-import { DocsLayout } from "@mcpstack/docs";
-import "@mcpstack/docs/styles.css";
+import { DocsLayout } from "@agenetix/docs";
+import "@agenetix/docs/styles.css";
 import { docsSource } from "@/lib/docs";
 import { searchDocsAction } from "@/app/doc-actions";
 
@@ -102,7 +102,7 @@ Create `app/docs/[[...slug]]/page.tsx`:
 
 ```tsx
 import { notFound, redirect } from "next/navigation";
-import { DocsHomePage, DocsPage } from "@mcpstack/docs";
+import { DocsHomePage, DocsPage } from "@agenetix/docs";
 import { docsSource } from "@/lib/docs";
 
 interface PageProps {
@@ -187,7 +187,7 @@ import {
   DocsLayout,
   DocsThemeProvider,
   type DocsThemeConfig,
-} from "@mcpstack/docs";
+} from "@agenetix/docs";
 import { docsSource } from "@/lib/docs";
 
 const docsTheme: DocsThemeConfig = {
@@ -234,7 +234,7 @@ If you do not need live editing, pass the same object directly to `DocsLayout` v
 - Theme primitives: `DocsThemeProvider`, `useDocsTheme()`, `resolveDocsTheme(theme)`
 - MDX helpers and components: `DocsMdx`, `getDefaultMdxComponents()`, plus banners, callouts, cards, tabs, steps, file trees, accordions, and code blocks
 - Optional blog primitives: `createBlogSource`, `BlogDirectoryPage`, `BlogPostPage`, `BlogSearch`, and related components
-- Shared stylesheet: `@mcpstack/docs/styles.css`
+- Shared stylesheet: `@agenetix/docs/styles.css`
 
 ## Local development
 
@@ -267,7 +267,7 @@ From `sqlos/web`, use a local file dependency:
 ```json
 {
   "dependencies": {
-    "@mcpstack/docs": "file:../../emcydocs"
+    "@agenetix/docs": "file:../../emcydocs"
   }
 }
 ```
@@ -279,4 +279,4 @@ The SqlOS repo also includes helper scripts to switch between a local file depen
 - Merge to `main` with passing CI
 - Tag a release like `v0.1.0`
 - Push the tag
-- GitHub Actions rebuilds, retests, and publishes `@mcpstack/docs` to npm
+- GitHub Actions rebuilds, retests, and publishes `@agenetix/docs` to npm

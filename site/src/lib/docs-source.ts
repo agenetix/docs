@@ -1,5 +1,5 @@
 import path from "node:path";
-import { createDocsSource } from "@mcpstack/docs";
+import { createDocsSource } from "@agenetix/docs";
 import {
   defaultSiteLocale,
   docsLocales,

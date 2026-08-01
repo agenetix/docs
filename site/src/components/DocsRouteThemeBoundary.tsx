@@ -5,7 +5,7 @@ import {
   useDocsTheme,
   type DocsThemeConfig,
   type DocsThemeTokens,
-} from "@mcpstack/docs";
+} from "@agenetix/docs";
 import { usePathname } from "next/navigation";
 import {
   createContext,

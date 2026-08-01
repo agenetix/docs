@@ -1,4 +1,4 @@
-import type { DocsThemeConfig } from "@mcpstack/docs";
+import type { DocsThemeConfig } from "@agenetix/docs";
 
 export interface DocsShowcaseThemePreset {
   id: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { resolveDocsTheme, useDocsTheme } from "@mcpstack/docs";
+import { resolveDocsTheme, useDocsTheme } from "@agenetix/docs";
 import { Moon, Palette, Sun } from "lucide-react";
 import { useMemo } from "react";
 import { Button } from "@/components/ui/button";

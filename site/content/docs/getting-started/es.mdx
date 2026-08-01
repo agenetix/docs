@@ -12,7 +12,7 @@ Pon MCP Stack Docs en marcha en minutos.
 Instala el paquete desde npm:
 
 ```bash
-npm install @mcpstack/docs
+npm install @agenetix/docs
 ```
 
 ## Configuracion rapida
@@ -23,7 +23,7 @@ Crea un archivo como `lib/docs.ts` en tu app:
 
 ```ts
 import path from "node:path";
-import { createDocsSource } from "@mcpstack/docs";
+import { createDocsSource } from "@agenetix/docs";
 
 export const docsSource = createDocsSource({
   contentDir: path.join(process.cwd(), "content/docs"),
@@ -42,8 +42,8 @@ export const docsSource = createDocsSource({
 Agrega un archivo de layout en `app/docs/layout.tsx`:
 
 ```tsx
-import { DocsLayout } from "@mcpstack/docs";
-import "@mcpstack/docs/styles.css";
+import { DocsLayout } from "@agenetix/docs";
+import "@agenetix/docs/styles.css";
 import { docsSource } from "@/lib/docs";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -60,7 +60,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 Agrega una pagina catch-all en `app/docs/[[...slug]]/page.tsx`:
 
 ```tsx
-import { DocsPage, DocsHomePage } from "@mcpstack/docs";
+import { DocsPage, DocsHomePage } from "@agenetix/docs";
 import { docsSource } from "@/lib/docs";
 
 export default async function Page({ params }: { params: { slug?: string[] } }) {

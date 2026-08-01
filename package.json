@@ -1,5 +1,5 @@
 {
-  "name": "@mcpstack/docs",
+  "name": "@agenetix/docs",
   "version": "1.0.0",
   "description": "App Router-native MDX documentation for Next.js with reusable layouts, search, TOC, and locale-aware routing.",
   "type": "module",

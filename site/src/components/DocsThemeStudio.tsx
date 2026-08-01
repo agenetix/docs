@@ -1,6 +1,6 @@
 "use client";
 
-import { useDocsTheme } from "@mcpstack/docs";
+import { useDocsTheme } from "@agenetix/docs";
 import {
   Check,
   Copy,

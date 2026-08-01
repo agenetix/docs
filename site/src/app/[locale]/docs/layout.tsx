@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { DocsLayout } from "@mcpstack/docs";
+import { DocsLayout } from "@agenetix/docs";
 import DocumentLanguage from "@/components/DocumentLanguage";
 import DocsRouteThemeBoundary from "@/components/DocsRouteThemeBoundary";
 import { DocsThemeStudioSidebarCard } from "@/components/DocsThemeStudio";
