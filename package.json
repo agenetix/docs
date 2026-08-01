@@ -67,12 +67,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ross-slaney/mcpstack-docs.git"
+    "url": "git+https://github.com/agenetix/mcpstack-docs.git"
   },
   "bugs": {
-    "url": "https://github.com/ross-slaney/mcpstack-docs/issues"
+    "url": "https://github.com/agenetix/mcpstack-docs/issues"
   },
-  "homepage": "https://github.com/ross-slaney/mcpstack-docs",
+  "homepage": "https://github.com/agenetix/mcpstack-docs",
   "engines": {
     "node": ">=20.0.0"
   },
