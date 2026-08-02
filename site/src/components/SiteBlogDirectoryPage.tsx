@@ -3,7 +3,7 @@ import {
   type BlogCardCopy,
   type BlogDirectoryCopy,
   type BlogPaginationCopy,
-} from "@mcpstack/docs";
+} from "@agenetix/docs";
 import { blogSource } from "@/lib/blog-source";
 import { getPageDictionary } from "@/lib/site-i18n";
 

@@ -30,7 +30,7 @@ export default function MarketingHomePage({ locale }: { locale: RouteLocale }) {
   const copy = getPageDictionary(locale, "marketingHome");
   const docsHref = buildLocalizedHref("/docs", locale);
   const githubUrl = "https://github.com/ross-slaney/mcpstack-docs";
-  const npmUrl = "https://www.npmjs.com/package/@mcpstack/docs";
+  const npmUrl = "https://www.npmjs.com/package/@agenetix/docs";
 
   return (
     <div className="marketing-page">
@@ -138,7 +138,7 @@ export default function MarketingHomePage({ locale }: { locale: RouteLocale }) {
             </div>
             <div className="marketing-glass marketing-code-window rounded-2xl p-1">
               <pre className="marketing-terminal overflow-x-auto rounded-xl bg-[#0a0f1a] p-5 text-[13px] leading-relaxed text-slate-300">
-                <code>{`import { DocsLayout, createDocsSource } from "@mcpstack/docs";
+                <code>{`import { DocsLayout, createDocsSource } from "@agenetix/docs";
 
 export const docs = createDocsSource({
   contentDir: "./content/docs",

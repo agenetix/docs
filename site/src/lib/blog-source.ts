@@ -1,5 +1,5 @@
 import path from "node:path";
-import { createBlogSource } from "@mcpstack/docs";
+import { createBlogSource } from "@agenetix/docs";
 import {
   defaultSiteLocale,
   hideDefaultSiteLocaleInUrl,

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { BlogPostPage, type BlogPostPageCopy } from "@mcpstack/docs";
+import { BlogPostPage, type BlogPostPageCopy } from "@agenetix/docs";
 import { blogSource } from "@/lib/blog-source";
 import { getPageDictionary } from "@/lib/site-i18n";
 

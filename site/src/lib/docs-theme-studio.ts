@@ -10,7 +10,7 @@ import {
   type DocsThemeRadius,
   type DocsThemeSurfaceStyle,
   type DocsThemeTokens,
-} from "@mcpstack/docs";
+} from "@agenetix/docs";
 
 export const DOCS_THEME_STORAGE_KEY = "emcydocs-docs-theme-v2";
 export const DOCS_THEME_PARAM_KEY = "docsTheme";

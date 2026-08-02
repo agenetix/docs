@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import "@mcpstack/docs/styles.css";
+import "@agenetix/docs/styles.css";
 import "./globals.css";
 import { defaultSiteLocale } from "@/lib/site-i18n";
 

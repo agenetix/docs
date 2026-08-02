@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     externalDir: true,
   },
-  transpilePackages: ["@mcpstack/docs"],
+  transpilePackages: ["@agenetix/docs"],
 };
 
 export default nextConfig;

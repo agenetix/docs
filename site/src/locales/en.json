@@ -46,7 +46,7 @@
       "primaryCta": "Get started",
       "secondaryCta": "View on GitHub",
       "terminalLabel": "Terminal",
-      "installCommand": "npm install @mcpstack/docs",
+      "installCommand": "npm install @agenetix/docs",
       "layoutsHeading": "One layout, flexible docs chrome",
       "layoutsDescription": "Shape the experience with preset palettes, accent tuning, density, shell sizing, token overrides, and optional custom header or sidebar overrides.",
       "exploreLabel": "Explore",

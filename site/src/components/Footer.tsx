@@ -34,7 +34,7 @@ export default function Footer({ locale }: { locale: RouteLocale }) {
               {copy.footer.tagline}
             </p>
             <p className="mt-4 font-mono text-xs text-primary/80">
-              npm i @mcpstack/docs
+              npm i @agenetix/docs
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export default function Footer({ locale }: { locale: RouteLocale }) {
               </li>
               <li>
                 <a
-                  href="https://www.npmjs.com/package/@mcpstack/docs"
+                  href="https://www.npmjs.com/package/@agenetix/docs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
