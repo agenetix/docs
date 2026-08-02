@@ -25,26 +25,26 @@ export default function DocsSearchResults({
 }) {
   if (trimmedQuery.length === 0) {
     return (
-      <p className="emcydocs-search-empty">
+      <p className="agenetixdocs-search-empty">
         Type to search documentation. Use arrow keys to navigate results.
       </p>
     );
   }
 
   if (error) {
-    return <p className="emcydocs-search-empty">{error}</p>;
+    return <p className="agenetixdocs-search-empty">{error}</p>;
   }
 
   if (isPending) {
-    return <p className="emcydocs-search-empty">Searching…</p>;
+    return <p className="agenetixdocs-search-empty">Searching…</p>;
   }
 
   if (visibleResults.length === 0) {
-    return <p className="emcydocs-search-empty">No matching documents.</p>;
+    return <p className="agenetixdocs-search-empty">No matching documents.</p>;
   }
 
   return (
-    <ul className="emcydocs-search-results" role="listbox">
+    <ul className="agenetixdocs-search-results" role="listbox">
       {visibleResults.map((result, index) => (
         <li key={`${result.href}-${index}`}>
           <Link
@@ -53,7 +53,7 @@ export default function DocsSearchResults({
               resultRefs.current[index] = element;
             }}
             className={[
-              "emcydocs-search-result",
+              "agenetixdocs-search-result",
               activeIndex === index ? "is-active" : "",
             ]
               .filter(Boolean)
@@ -61,13 +61,13 @@ export default function DocsSearchResults({
             onClick={onResultClick}
             onFocus={() => onFocusResult(index)}
           >
-            <div className="emcydocs-search-result-top">
-              <span className="emcydocs-search-result-title">{result.title}</span>
+            <div className="agenetixdocs-search-result-top">
+              <span className="agenetixdocs-search-result-title">{result.title}</span>
               {result.sectionTitle ? (
-                <span className="emcydocs-search-result-section">{result.sectionTitle}</span>
+                <span className="agenetixdocs-search-result-section">{result.sectionTitle}</span>
               ) : null}
             </div>
-            <p className="emcydocs-search-result-snippet">{result.snippet}</p>
+            <p className="agenetixdocs-search-result-snippet">{result.snippet}</p>
           </Link>
         </li>
       ))}

@@ -19,7 +19,7 @@ export default function DocsPageMobileToc({
   }
 
   return (
-    <div className="emcydocs-mobile-toc">
+    <div className="agenetixdocs-mobile-toc">
       <InlineToc
         title={title}
         items={visibleHeadings.map((heading) => ({

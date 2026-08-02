@@ -7,7 +7,7 @@
 >
   <defs>
     <linearGradient
-      id="emcydocs-icon-gradient"
+      id="agenetixdocs-icon-gradient"
       x1="10"
       y1="6"
       x2="54"
@@ -19,7 +19,7 @@
     </linearGradient>
   </defs>
 
-  <rect width="64" height="64" rx="16" fill="url(#emcydocs-icon-gradient)" />
+  <rect width="64" height="64" rx="16" fill="url(#agenetixdocs-icon-gradient)" />
   <path
     d="M14 14C24 8 44 8 52 22C44 18 28 17 18 20C15 18 14 16 14 14Z"
     fill="#FFFFFF"

@@ -63,8 +63,8 @@ describe("theme resolver", () => {
     expect(resolvedTheme.tokens.background).toBe("210 50% 10%");
     expect(resolvedTheme.tokens.primary.startsWith("182 ")).toBe(true);
     expect(resolvedTheme.style["--radius"]).toBe("1.5rem");
-    expect(resolvedTheme.style["--emcydocs-page-padding"]).toBe("1rem");
-    expect(resolvedTheme.style["--emcydocs-code-bg"]).toBeTruthy();
+    expect(resolvedTheme.style["--agenetixdocs-page-padding"]).toBe("1rem");
+    expect(resolvedTheme.style["--agenetixdocs-code-bg"]).toBeTruthy();
   });
 });
 
@@ -95,20 +95,20 @@ describe("theme provider", () => {
       </DocsThemeProvider>
     );
 
-    const shell = document.querySelector(".emcydocs-shell") as HTMLElement;
+    const shell = document.querySelector(".agenetixdocs-shell") as HTMLElement;
 
-    expect(shell.dataset.emcydocsPreset).toBe("neutral");
-    expect(shell.dataset.emcydocsMode).toBe("light");
+    expect(shell.dataset.agenetixdocsPreset).toBe("neutral");
+    expect(shell.dataset.agenetixdocsMode).toBe("light");
 
     fireEvent.click(screen.getByRole("button", { name: "Apply ocean compact" }));
 
     await waitFor(() => {
-      expect(shell.dataset.emcydocsPreset).toBe("ocean");
-      expect(shell.dataset.emcydocsMode).toBe("dark");
-      expect(shell.dataset.emcydocsDensity).toBe("compact");
-      expect(shell.dataset.emcydocsSurfaceStyle).toBe("elevated");
+      expect(shell.dataset.agenetixdocsPreset).toBe("ocean");
+      expect(shell.dataset.agenetixdocsMode).toBe("dark");
+      expect(shell.dataset.agenetixdocsDensity).toBe("compact");
+      expect(shell.dataset.agenetixdocsSurfaceStyle).toBe("elevated");
       expect(shell.style.getPropertyValue("--radius")).toBe("1.5rem");
-      expect(shell.style.getPropertyValue("--emcydocs-sidebar-width")).toBe("300px");
+      expect(shell.style.getPropertyValue("--agenetixdocs-sidebar-width")).toBe("300px");
     });
   });
 });

@@ -11,7 +11,7 @@ export default function DocsSearchTrigger({
   return (
     <button
       type="button"
-      className="emcydocs-search-trigger-compact"
+      className="agenetixdocs-search-trigger-compact"
       onClick={onClick}
       aria-label={label}
     >

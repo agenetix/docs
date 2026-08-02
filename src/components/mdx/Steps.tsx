@@ -5,7 +5,7 @@ interface StepsProps {
 }
 
 export default function Steps({ children }: StepsProps) {
-  return <div className="emcydocs-steps">{children}</div>;
+  return <div className="agenetixdocs-steps">{children}</div>;
 }
 
 interface StepProps {
@@ -15,9 +15,9 @@ interface StepProps {
 
 export function Step({ title, children }: StepProps) {
   return (
-    <div className="emcydocs-step">
-      <h4 className="emcydocs-step-title">{title}</h4>
-      <div className="emcydocs-step-content">{children}</div>
+    <div className="agenetixdocs-step">
+      <h4 className="agenetixdocs-step-title">{title}</h4>
+      <div className="agenetixdocs-step-content">{children}</div>
     </div>
   );
 }

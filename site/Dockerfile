@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for the MCP Stack Docs site.
+# Multi-stage Dockerfile for the Agenetix Docs site.
 FROM node:20-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
