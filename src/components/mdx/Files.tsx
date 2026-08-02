@@ -7,9 +7,9 @@ interface FilesProps {
 
 export default function Files({ children, title }: FilesProps) {
   return (
-    <div className="emcydocs-files">
-      {title ? <div className="emcydocs-files-title">{title}</div> : null}
-      <div className="emcydocs-files-tree">{children}</div>
+    <div className="agenetixdocs-files">
+      {title ? <div className="agenetixdocs-files-title">{title}</div> : null}
+      <div className="agenetixdocs-files-tree">{children}</div>
     </div>
   );
 }
@@ -22,12 +22,12 @@ interface FolderProps {
 
 export function Folder({ name, children, defaultOpen = true }: FolderProps) {
   return (
-    <details className="emcydocs-files-folder" open={defaultOpen}>
-      <summary className="emcydocs-files-row emcydocs-files-row-folder">
-        <span className="emcydocs-files-glyph">▾</span>
+    <details className="agenetixdocs-files-folder" open={defaultOpen}>
+      <summary className="agenetixdocs-files-row agenetixdocs-files-row-folder">
+        <span className="agenetixdocs-files-glyph">▾</span>
         <span>{name}</span>
       </summary>
-      <div className="emcydocs-files-children">{children}</div>
+      <div className="agenetixdocs-files-children">{children}</div>
     </details>
   );
 }
@@ -39,10 +39,10 @@ interface FileProps {
 
 export function File({ name, meta }: FileProps) {
   return (
-    <div className="emcydocs-files-row emcydocs-files-row-file">
-      <span className="emcydocs-files-glyph">•</span>
+    <div className="agenetixdocs-files-row agenetixdocs-files-row-file">
+      <span className="agenetixdocs-files-glyph">•</span>
       <span>{name}</span>
-      {meta ? <span className="emcydocs-files-meta">{meta}</span> : null}
+      {meta ? <span className="agenetixdocs-files-meta">{meta}</span> : null}
     </div>
   );
 }

@@ -95,19 +95,19 @@ export default function DocsShell({
   const desktopHeader = isEmbedded
     ? null
     : renderSlot(header, { ...headerSlotProps, isMobile: false }, () => (
-        <div className="emcydocs-header-inner">
-          <div className="emcydocs-header-brand">
+        <div className="agenetixdocs-header-inner">
+          <div className="agenetixdocs-header-brand">
             {brand ?? <span>Documentation</span>}
           </div>
-          <div className="emcydocs-header-search">
+          <div className="agenetixdocs-header-search">
             <button
               type="button"
-              className="emcydocs-search-trigger"
+              className="agenetixdocs-search-trigger"
               onClick={() => setIsSearchOpen(true)}
               aria-label="Open search"
             >
               <svg
-                className="emcydocs-search-trigger-icon"
+                className="agenetixdocs-search-trigger-icon"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -116,18 +116,18 @@ export default function DocsShell({
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
               </svg>
-              <span className="emcydocs-search-trigger-label">Search the docs...</span>
-              <span className="emcydocs-search-kbd">⌘K</span>
+              <span className="agenetixdocs-search-trigger-label">Search the docs...</span>
+              <span className="agenetixdocs-search-kbd">⌘K</span>
             </button>
           </div>
           {themeSwitcher ? (
-            <div className="emcydocs-header-theme">{themeSwitcher}</div>
+            <div className="agenetixdocs-header-theme">{themeSwitcher}</div>
           ) : null}
           {languageSwitcher ? (
-            <div className="emcydocs-header-language">{languageSwitcher}</div>
+            <div className="agenetixdocs-header-language">{languageSwitcher}</div>
           ) : null}
           {topLinks?.length ? (
-            <nav className="emcydocs-header-links" aria-label="Top level docs links">
+            <nav className="agenetixdocs-header-links" aria-label="Top level docs links">
               {topLinks.map((link) => (
                 <a key={link.href} href={link.href}>
                   {link.label}
@@ -150,7 +150,7 @@ export default function DocsShell({
         >
           <DocsSearchTrigger onClick={() => setIsSearchOpen(true)} />
           {themeSwitcher ? (
-            <div className="emcydocs-mobile-theme">{themeSwitcher}</div>
+            <div className="agenetixdocs-mobile-theme">{themeSwitcher}</div>
           ) : null}
         </MobileDocsChrome>
       ));
@@ -180,34 +180,34 @@ export default function DocsShell({
   return (
     <div
       className={[
-        "emcydocs-shell",
-        isEmbedded ? "emcydocs-shell-embedded" : "",
-        hasSidebar ? "" : "emcydocs-shell-sidebarless",
+        "agenetixdocs-shell",
+        isEmbedded ? "agenetixdocs-shell-embedded" : "",
+        hasSidebar ? "" : "agenetixdocs-shell-sidebarless",
         className ?? "",
       ]
         .filter(Boolean)
         .join(" ")}
-      data-emcydocs-preset={themePreset}
-      data-emcydocs-mode={resolvedTheme.attributes.mode}
-      data-emcydocs-density={resolvedTheme.attributes.density}
-      data-emcydocs-surface-style={resolvedTheme.attributes.surfaceStyle}
-      data-emcydocs-accent-strength={resolvedTheme.attributes.accentStrength}
+      data-agenetixdocs-preset={themePreset}
+      data-agenetixdocs-mode={resolvedTheme.attributes.mode}
+      data-agenetixdocs-density={resolvedTheme.attributes.density}
+      data-agenetixdocs-surface-style={resolvedTheme.attributes.surfaceStyle}
+      data-agenetixdocs-accent-strength={resolvedTheme.attributes.accentStrength}
       style={resolvedTheme.style}
     >
-      {desktopHeader ? <header className="emcydocs-header">{desktopHeader}</header> : null}
+      {desktopHeader ? <header className="agenetixdocs-header">{desktopHeader}</header> : null}
 
       {mobileHeader ? (
         <div
-          className={["emcydocs-mobile-wrap", isNavOpen ? "is-open" : ""]
+          className={["agenetixdocs-mobile-wrap", isNavOpen ? "is-open" : ""]
             .filter(Boolean)
             .join(" ")}
         >
-          <div className="emcydocs-mobile-inner">{mobileHeader}</div>
+          <div className="agenetixdocs-mobile-inner">{mobileHeader}</div>
           {mobileSidebar ? (
-            <div className="emcydocs-mobile-inner">
+            <div className="agenetixdocs-mobile-inner">
               <div
-                id="emcydocs-mobile-nav"
-                className={["emcydocs-mobile-nav-panel", isNavOpen ? "is-open" : ""]
+                id="agenetixdocs-mobile-nav"
+                className={["agenetixdocs-mobile-nav-panel", isNavOpen ? "is-open" : ""]
                   .filter(Boolean)
                   .join(" ")}
                 aria-hidden={!isNavOpen}
@@ -221,11 +221,11 @@ export default function DocsShell({
 
       {/* In embedded mode on mobile, show a simple nav toggle */}
       {isEmbedded && hasSidebar ? (
-        <div className="emcydocs-embedded-mobile-bar">
+        <div className="agenetixdocs-embedded-mobile-bar">
           <DocsSearchTrigger onClick={() => setIsSearchOpen(true)} />
           <button
             type="button"
-            className="emcydocs-embedded-nav-toggle"
+            className="agenetixdocs-embedded-nav-toggle"
             onClick={() => setIsNavOpen(!isNavOpen)}
             aria-expanded={isNavOpen}
           >
@@ -239,16 +239,16 @@ export default function DocsShell({
             <span>{isNavOpen ? "Close" : "Menu"}</span>
           </button>
           {isNavOpen && mobileSidebar ? (
-            <div className="emcydocs-embedded-nav-panel">{mobileSidebar}</div>
+            <div className="agenetixdocs-embedded-nav-panel">{mobileSidebar}</div>
           ) : null}
         </div>
       ) : null}
 
-      <div className="emcydocs-frame">
+      <div className="agenetixdocs-frame">
         {desktopSidebar ? (
-          <aside className="emcydocs-desktop-nav">{desktopSidebar}</aside>
+          <aside className="agenetixdocs-desktop-nav">{desktopSidebar}</aside>
         ) : null}
-        <main className="emcydocs-main">
+        <main className="agenetixdocs-main">
           <HeadingLinks />
           {children}
         </main>

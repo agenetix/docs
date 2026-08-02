@@ -16,14 +16,14 @@ export default function BlogCard({
   const readingTimeSuffix = copy?.readingTimeSuffix ?? "min read";
 
   return (
-    <article className="emcydocs-blog-card">
-      <Link href={post.href} className="emcydocs-blog-card-link">
+    <article className="agenetixdocs-blog-card">
+      <Link href={post.href} className="agenetixdocs-blog-card-link">
         {post.image ? (
-          <div className="emcydocs-blog-card-image-wrap">
+          <div className="agenetixdocs-blog-card-image-wrap">
             <Image
               src={post.image}
               alt={post.imageAlt || post.title}
-              className="emcydocs-blog-card-image"
+              className="agenetixdocs-blog-card-image"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               unoptimized
@@ -31,9 +31,9 @@ export default function BlogCard({
           </div>
         ) : null}
 
-        <div className="emcydocs-blog-card-body">
-          <div className="emcydocs-blog-card-meta">
-            <span className="emcydocs-blog-card-category">{post.category}</span>
+        <div className="agenetixdocs-blog-card-body">
+          <div className="agenetixdocs-blog-card-meta">
+            <span className="agenetixdocs-blog-card-category">{post.category}</span>
             <span>{formatBlogDate(post.publishedAt, locale)}</span>
             <span>
               {post.readingTimeMinutes} {readingTimeSuffix}
@@ -44,16 +44,16 @@ export default function BlogCard({
           {post.description ? <p>{post.description}</p> : null}
 
           {post.tags.length > 0 ? (
-            <div className="emcydocs-blog-card-tags">
+            <div className="agenetixdocs-blog-card-tags">
               {post.tags.slice(0, 3).map((tag) => (
-                <span key={tag} className="emcydocs-blog-card-tag">
+                <span key={tag} className="agenetixdocs-blog-card-tag">
                   {tag}
                 </span>
               ))}
             </div>
           ) : null}
 
-          <span className="emcydocs-blog-card-cta">{readMoreLabel}</span>
+          <span className="agenetixdocs-blog-card-cta">{readMoreLabel}</span>
         </div>
       </Link>
     </article>

@@ -61,9 +61,9 @@
     "i18n",
     "seo",
     "saas",
-    "mcpstack"
+    "agenetix"
   ],
-  "author": "MCP Stack <hello@mcpstack.com>",
+  "author": "Agenetix <hello@agenetix.com>",
   "license": "MIT",
   "repository": {
     "type": "git",

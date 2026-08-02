@@ -10,7 +10,7 @@ export function StickyAside({
   className?: string;
 }) {
   return (
-    <div className={["emcydocs-sticky-aside", className ?? ""].filter(Boolean).join(" ")}>
+    <div className={["agenetixdocs-sticky-aside", className ?? ""].filter(Boolean).join(" ")}>
       <div style={{ position: "sticky", top }}>{children}</div>
     </div>
   );

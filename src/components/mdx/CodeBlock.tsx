@@ -20,18 +20,18 @@ export default function CodeBlock({
   const shouldShowChrome = Boolean(title || detectedLanguage || allowCopy);
 
   return (
-    <div className="emcydocs-codeblock">
+    <div className="agenetixdocs-codeblock">
       {shouldShowChrome ? (
-        <div className="emcydocs-codeblock-header">
-          <div className="emcydocs-codeblock-meta">
-            <span className="emcydocs-codeblock-dots" aria-hidden="true">
+        <div className="agenetixdocs-codeblock-header">
+          <div className="agenetixdocs-codeblock-meta">
+            <span className="agenetixdocs-codeblock-dots" aria-hidden="true">
               <span />
               <span />
               <span />
             </span>
-            {title ? <span className="emcydocs-codeblock-title">{title}</span> : null}
+            {title ? <span className="agenetixdocs-codeblock-title">{title}</span> : null}
             {!title && detectedLanguage ? (
-              <span className="emcydocs-codeblock-title">
+              <span className="agenetixdocs-codeblock-title">
                 {detectedLanguage.toUpperCase()}
               </span>
             ) : null}
@@ -39,7 +39,7 @@ export default function CodeBlock({
           {allowCopy && codeText ? <CopyCodeButton value={codeText} /> : null}
         </div>
       ) : null}
-      <div className="emcydocs-codeblock-body">{children}</div>
+      <div className="agenetixdocs-codeblock-body">{children}</div>
     </div>
   );
 }

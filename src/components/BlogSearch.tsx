@@ -10,10 +10,10 @@ export default function BlogSearch({
   placeholder: string;
 }) {
   return (
-    <form action={actionHref} method="get" className="emcydocs-blog-search-form">
-      <div className="emcydocs-blog-search-input-wrap">
+    <form action={actionHref} method="get" className="agenetixdocs-blog-search-form">
+      <div className="agenetixdocs-blog-search-input-wrap">
         <svg
-          className="emcydocs-blog-search-icon"
+          className="agenetixdocs-blog-search-icon"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -27,7 +27,7 @@ export default function BlogSearch({
           name="q"
           defaultValue={query}
           placeholder={placeholder}
-          className="emcydocs-blog-search-input"
+          className="agenetixdocs-blog-search-input"
         />
       </div>
       {category && category !== "all" ? <input type="hidden" name="category" value={category} /> : null}
