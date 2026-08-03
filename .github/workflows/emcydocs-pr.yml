@@ -1,4 +1,4 @@
-name: Agenetix Docs Checks (PR)
+name: MCP Stack Docs Checks (PR)
 
 on:
   pull_request:

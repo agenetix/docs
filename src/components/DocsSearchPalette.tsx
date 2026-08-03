@@ -53,12 +53,12 @@ export default function DocsSearchPalette({
           {showTrigger ? (
             <button
               type="button"
-              className="agenetixdocs-search-trigger"
+              className="emcydocs-search-trigger"
               onClick={() => setOpen(true)}
               aria-label="Open search"
             >
               <svg
-                className="agenetixdocs-search-trigger-icon"
+                className="emcydocs-search-trigger-icon"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -67,8 +67,8 @@ export default function DocsSearchPalette({
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
               </svg>
-              <span className="agenetixdocs-search-trigger-label">{placeholder}</span>
-              <span className="agenetixdocs-search-kbd">⌘K</span>
+              <span className="emcydocs-search-trigger-label">{placeholder}</span>
+              <span className="emcydocs-search-kbd">⌘K</span>
             </button>
           ) : null}
           <DocsSearchCommand

@@ -26,7 +26,7 @@ export default function BlogPagination({
   const pageLabel = copy?.pageLabel ?? "Page";
 
   return (
-    <nav className="agenetixdocs-blog-pagination" aria-label="Blog pagination">
+    <nav className="emcydocs-blog-pagination" aria-label="Blog pagination">
       {page > 1 ? (
         <Link
           href={buildBlogDirectoryHref({
@@ -35,15 +35,15 @@ export default function BlogPagination({
             category,
             page: page - 1,
           })}
-          className="agenetixdocs-blog-pagination-link"
+          className="emcydocs-blog-pagination-link"
         >
           {previousLabel}
         </Link>
       ) : (
-        <span className="agenetixdocs-blog-pagination-link is-disabled">{previousLabel}</span>
+        <span className="emcydocs-blog-pagination-link is-disabled">{previousLabel}</span>
       )}
 
-      <span className="agenetixdocs-blog-pagination-status">
+      <span className="emcydocs-blog-pagination-status">
         {pageLabel} {page} / {totalPages}
       </span>
 
@@ -55,12 +55,12 @@ export default function BlogPagination({
             category,
             page: page + 1,
           })}
-          className="agenetixdocs-blog-pagination-link"
+          className="emcydocs-blog-pagination-link"
         >
           {nextLabel}
         </Link>
       ) : (
-        <span className="agenetixdocs-blog-pagination-link is-disabled">{nextLabel}</span>
+        <span className="emcydocs-blog-pagination-link is-disabled">{nextLabel}</span>
       )}
     </nav>
   );

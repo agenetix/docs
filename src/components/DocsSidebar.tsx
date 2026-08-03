@@ -67,21 +67,21 @@ function DocsSidebarContent({
   const isDesktop = variant === "desktop";
 
   return (
-    <div className={isDesktop ? "agenetixdocs-sidebar" : "agenetixdocs-sidebar-mobile"}>
-      {header ? <div className="agenetixdocs-sidebar-header">{header}</div> : null}
-      <nav aria-label="Documentation navigation" className="agenetixdocs-sidebar-scroll">
+    <div className={isDesktop ? "emcydocs-sidebar" : "emcydocs-sidebar-mobile"}>
+      {header ? <div className="emcydocs-sidebar-header">{header}</div> : null}
+      <nav aria-label="Documentation navigation" className="emcydocs-sidebar-scroll">
         {sections.map((section) => {
           const isCollapsed = collapsed[section.key] ?? false;
-          const sectionId = `agenetixdocs-sidebar-section-${section.key || "root"}`;
+          const sectionId = `emcydocs-sidebar-section-${section.key || "root"}`;
 
           return (
-            <section key={section.key || "root"} className="agenetixdocs-sidebar-section">
+            <section key={section.key || "root"} className="emcydocs-sidebar-section">
               {isDesktop ? (
-                <h3 className="agenetixdocs-sidebar-section-label">{section.label}</h3>
+                <h3 className="emcydocs-sidebar-section-label">{section.label}</h3>
               ) : (
                 <button
                   type="button"
-                  className="agenetixdocs-sidebar-section-toggle"
+                  className="emcydocs-sidebar-section-toggle"
                   aria-controls={sectionId}
                   aria-expanded={!isCollapsed}
                   onClick={() =>
@@ -96,7 +96,7 @@ function DocsSidebarContent({
                 </button>
               )}
               {(!isCollapsed || isDesktop) && (
-                <ul id={sectionId} className="agenetixdocs-sidebar-list">
+                <ul id={sectionId} className="emcydocs-sidebar-list">
                   {section.items.map((item) => {
                     const depth = Math.max(0, item.slugs.length - 1);
                     const isActive = isActiveDocsPath(pathname, item.href);
@@ -105,7 +105,7 @@ function DocsSidebarContent({
                         <Link
                           href={item.href}
                           className={[
-                            "agenetixdocs-sidebar-link",
+                            "emcydocs-sidebar-link",
                             isActive ? "is-active" : "",
                             depth > 0 ? "is-nested" : "",
                           ]
@@ -125,7 +125,7 @@ function DocsSidebarContent({
           );
         })}
       </nav>
-      {footer ? <div className="agenetixdocs-sidebar-footer">{footer}</div> : null}
+      {footer ? <div className="emcydocs-sidebar-footer">{footer}</div> : null}
     </div>
   );
 }

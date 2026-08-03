@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "Agenetix Docs",
+    "brand": "MCP Stack Docs",
     "github": "GitHub",
     "npm": "npm"
   },
@@ -29,11 +29,11 @@
       "documentation": "Documentacion",
       "license": "Licencia MIT"
     },
-    "copyright": "Agenetix Docs. Todos los derechos reservados."
+    "copyright": "MCP Stack Docs. Todos los derechos reservados."
   },
   "docs": {
     "layout": {
-      "brand": "Agenetix Docs",
+      "brand": "MCP Stack Docs",
       "classicDocs": "Docs clasicos",
       "defaultDocs": "Docs por defecto"
     }
@@ -43,7 +43,7 @@
       "heroBadge": "Ya disponible en npm",
       "heroTitlePrimary": "Documentacion que",
       "heroTitleAccent": "vive en tu app",
-      "heroDescription": "Agenetix Docs es una libreria de documentacion MDX nativa de App Router para Next.js. Contenido basado en archivos, rutas por idioma, un sistema de temas flexible y una UX pensada para mobile en un solo paquete.",
+      "heroDescription": "MCP Stack Docs es una libreria de documentacion MDX nativa de App Router para Next.js. Contenido basado en archivos, rutas por idioma, un sistema de temas flexible y una UX pensada para mobile en un solo paquete.",
       "primaryCta": "Empezar",
       "secondaryCta": "Ver en GitHub",
       "terminalLabel": "Terminal",
@@ -157,7 +157,7 @@
       "updatedOnLabel": "Actualizado",
       "tagsLabel": "Etiquetas",
       "suggestedLabel": "Publicaciones sugeridas",
-      "suggestedDescription": "Mas notas de implementacion, articulos de lanzamiento y patrones del contenido de ejemplo de Agenetix Docs.",
+      "suggestedDescription": "Mas notas de implementacion, articulos de lanzamiento y patrones del contenido de ejemplo de MCP Stack Docs.",
       "readMoreLabel": "Leer mas",
       "readingTimeSuffix": "min de lectura"
     }

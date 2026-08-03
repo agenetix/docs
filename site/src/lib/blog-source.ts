@@ -14,6 +14,6 @@ export const blogSource = createBlogSource({
   defaultLocale: defaultSiteLocale,
   locales: [...routeLocales],
   hideDefaultLocaleInUrl: hideDefaultSiteLocaleInUrl,
-  siteTitle: "Agenetix Docs",
-  titleSuffix: "Agenetix Docs",
+  siteTitle: "MCP Stack Docs",
+  titleSuffix: "MCP Stack Docs",
 });

@@ -18,9 +18,9 @@ export default function HeadingLinks() {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
-      element.classList.add("agenetixdocs-highlight");
+      element.classList.add("emcydocs-highlight");
       window.setTimeout(() => {
-        element.classList.remove("agenetixdocs-highlight");
+        element.classList.remove("emcydocs-highlight");
       }, 1600);
     };
 

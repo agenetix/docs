@@ -1,6 +1,6 @@
 {
   "name": "@agenetix/docs",
-  "version": "1.0.1",
+  "version": "1.1.2",
   "description": "App Router-native MDX documentation for Next.js with reusable layouts, search, TOC, and locale-aware routing.",
   "type": "module",
   "main": "dist/index.js",
@@ -61,9 +61,9 @@
     "i18n",
     "seo",
     "saas",
-    "agenetix"
+    "mcpstack"
   ],
-  "author": "Agenetix <hello@agenetix.com>",
+  "author": "MCP Stack <hello@mcpstack.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
