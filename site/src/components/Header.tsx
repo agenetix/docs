@@ -101,7 +101,7 @@ function HeaderContent({
           <ThemeSwitcher />
           <Button variant="ghost" size="icon" asChild>
             <a
-              href="https://github.com/ross-slaney/agenetix-docs"
+              href="https://github.com/ross-slaney/mcpstack-docs"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -147,7 +147,7 @@ function HeaderContent({
             </Button>
             <Button variant="ghost" className="justify-start" asChild>
               <a
-                href="https://github.com/ross-slaney/agenetix-docs"
+                href="https://github.com/ross-slaney/mcpstack-docs"
                 target="_blank"
                 rel="noreferrer"
                 onClick={closeMenu}

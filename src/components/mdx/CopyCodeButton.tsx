@@ -22,7 +22,7 @@ export default function CopyCodeButton({
   return (
     <button
       type="button"
-      className="agenetixdocs-codeblock-copy"
+      className="emcydocs-codeblock-copy"
       onClick={copy}
       aria-label={copied ? "Code copied" : "Copy code"}
     >
