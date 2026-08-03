@@ -61,15 +61,15 @@ export default async function DocsHomePage({
   const links = quickLinks?.length ? quickLinks : defaultQuickLinks;
 
   return (
-    <div className="emcydocs-home">
-      <section className="emcydocs-home-hero">
-        <div className="emcydocs-home-hero-main">
+    <div className="agenetixdocs-home">
+      <section className="agenetixdocs-home-hero">
+        <div className="agenetixdocs-home-hero-main">
           <h1>{pageTitle}</h1>
           {pageDescription ? <p>{pageDescription}</p> : null}
           {links.length > 0 ? (
-            <div className="emcydocs-home-quick-links">
+            <div className="agenetixdocs-home-quick-links">
               {links.map((link) => (
-                <Link key={link.href} href={link.href} className="emcydocs-home-quick-link">
+                <Link key={link.href} href={link.href} className="agenetixdocs-home-quick-link">
                   {link.label}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M9 18l6-6-6-6" />
@@ -82,31 +82,31 @@ export default async function DocsHomePage({
       </section>
 
       {entry ? (
-        <section className="emcydocs-home-content">
+        <section className="agenetixdocs-home-content">
           <DocsMdx entry={entry} />
         </section>
       ) : null}
 
-      <section className="emcydocs-home-grid">
+      <section className="agenetixdocs-home-grid">
         {navigation.map((section) => {
           const landingHref = section.items[0]?.href;
           return (
-            <article key={section.key || "root"} className="emcydocs-home-card">
-              <div className="emcydocs-home-card-head">
-                <div className="emcydocs-home-card-heading">
-                  <span className="emcydocs-home-card-icon">
+            <article key={section.key || "root"} className="agenetixdocs-home-card">
+              <div className="agenetixdocs-home-card-head">
+                <div className="agenetixdocs-home-card-heading">
+                  <span className="agenetixdocs-home-card-icon">
                     <span>{getSectionIcon(section.key, section.label)}</span>
                   </span>
                   <h2>{section.label}</h2>
                 </div>
-                <span className="emcydocs-home-card-count">{section.items.length} pages</span>
+                <span className="agenetixdocs-home-card-count">{section.items.length} pages</span>
               </div>
               {getSectionSummary(section.items) ? (
-                <p className="emcydocs-home-card-summary">{getSectionSummary(section.items)}</p>
+                <p className="agenetixdocs-home-card-summary">{getSectionSummary(section.items)}</p>
               ) : null}
-              <div className="emcydocs-home-card-links">
+              <div className="agenetixdocs-home-card-links">
                 {section.items.slice(0, 4).map((item) => (
-                  <Link key={item.href} href={item.href} className="emcydocs-home-card-link">
+                  <Link key={item.href} href={item.href} className="agenetixdocs-home-card-link">
                     <div>
                       <strong>{item.title}</strong>
                       {item.description ? <span>{truncateText(item.description, 68)}</span> : null}
@@ -118,7 +118,7 @@ export default async function DocsHomePage({
                 ))}
               </div>
               {section.items.length > 4 && landingHref ? (
-                <Link href={landingHref} className="emcydocs-home-card-more">
+                <Link href={landingHref} className="agenetixdocs-home-card-more">
                   Browse {section.items.length} pages in {section.label}
                 </Link>
               ) : null}

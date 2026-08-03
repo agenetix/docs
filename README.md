@@ -1,4 +1,4 @@
-# MCP Stack Docs
+# Agenetix Docs
 
 `@agenetix/docs` is an App Router-native MDX docs library for Next.js.
 
@@ -13,8 +13,8 @@ This repository contains both the published package and the example site that do
 ## Preview
 
 <p align="center">
-  <img src=".github/assets/docs-page.png" alt="MCP Stack Docs docs page screenshot" width="49%" />
-  <img src=".github/assets/theme-studio.png" alt="MCP Stack Docs theme studio screenshot" width="49%" />
+  <img src=".github/assets/docs-page.png" alt="Agenetix Docs docs page screenshot" width="49%" />
+  <img src=".github/assets/theme-studio.png" alt="Agenetix Docs theme studio screenshot" width="49%" />
 </p>
 
 The example site ships with a polished docs shell and an optional live theme studio for tuning presets, density, surface styles, and accent behavior.
@@ -157,7 +157,7 @@ Create `content/docs/getting-started/en.mdx`:
 ```mdx
 ---
 title: "Getting Started"
-description: "Your first MCP Stack Docs page"
+description: "Your first Agenetix Docs page"
 order: 0
 ---
 
@@ -172,7 +172,7 @@ At that point, your app can render a static docs section from repo-local MDX und
 
 ```tsx
 export default function DocsLoading() {
-  return <div className="emcydocs-prose emcydocs-mdx-loading" aria-busy="true" />;
+  return <div className="agenetixdocs-prose agenetixdocs-mdx-loading" aria-busy="true" />;
 }
 ```
 
@@ -267,7 +267,7 @@ From `sqlos/web`, use a local file dependency:
 ```json
 {
   "dependencies": {
-    "@agenetix/docs": "file:../../emcydocs"
+    "@agenetix/docs": "file:../../agenetixdocs"
   }
 }
 ```

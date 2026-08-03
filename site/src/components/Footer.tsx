@@ -61,7 +61,7 @@ export default function Footer({ locale }: { locale: RouteLocale }) {
               </li>
               <li>
                 <a
-                  href="https://github.com/ross-slaney/mcpstack-docs"
+                  href="https://github.com/ross-slaney/agenetix-docs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -104,7 +104,7 @@ export default function Footer({ locale }: { locale: RouteLocale }) {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/ross-slaney/mcpstack-docs"
+              href="https://github.com/ross-slaney/agenetix-docs"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border border-border/80 p-2 text-muted-foreground transition-all hover:border-primary/30 hover:text-primary"

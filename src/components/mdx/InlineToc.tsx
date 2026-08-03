@@ -19,14 +19,14 @@ export default function InlineToc({
   }
 
   return (
-    <nav className="emcydocs-inline-toc" aria-label={title}>
-      <div className="emcydocs-inline-toc-title">{title}</div>
-      <div className="emcydocs-inline-toc-list">
+    <nav className="agenetixdocs-inline-toc" aria-label={title}>
+      <div className="agenetixdocs-inline-toc-title">{title}</div>
+      <div className="agenetixdocs-inline-toc-list">
         {resolvedItems.map((item) => (
           <a
             key={`${item.href}-${item.label}`}
             href={item.href}
-            className="emcydocs-inline-toc-link"
+            className="agenetixdocs-inline-toc-link"
             style={
               item.level && item.level > 1
                 ? { paddingLeft: `${(item.level - 1) * 0.9}rem` }

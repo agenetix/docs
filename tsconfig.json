@@ -16,8 +16,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@emcy/docs": ["./src/index.ts"],
-      "@emcy/docs/*": ["./src/*"]
+      "@agenetix/docs": ["./src/index.ts"],
+      "@agenetix/docs/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts", "tests/**/*.tsx"]

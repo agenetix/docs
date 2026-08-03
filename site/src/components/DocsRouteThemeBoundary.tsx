@@ -178,9 +178,9 @@ function DocsRouteThemeBoundaryInner({
     <DocsRouteThemeUiContext.Provider value={uiValue}>
       <div
         className="min-h-screen bg-background text-foreground transition-colors"
-        data-emcydocs-route-theme="true"
-        data-emcydocs-preset={resolvedTheme.attributes.preset}
-        data-emcydocs-mode={resolvedTheme.attributes.mode}
+        data-agenetixdocs-route-theme="true"
+        data-agenetixdocs-preset={resolvedTheme.attributes.preset}
+        data-agenetixdocs-mode={resolvedTheme.attributes.mode}
         style={routeStyle}
       >
         {children}

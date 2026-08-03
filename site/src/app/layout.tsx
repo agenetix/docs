@@ -6,9 +6,9 @@ import "./globals.css";
 import { defaultSiteLocale } from "@/lib/site-i18n";
 
 export const metadata: Metadata = {
-  title: "MCP Stack Docs | App Router-native docs for Next.js",
+  title: "Agenetix Docs | App Router-native docs for Next.js",
   description:
-    "MCP Stack Docs is an App Router-native MDX documentation library for Next.js with locale-aware routes, a flexible theme system, built-in mobile docs UX, search, TOC, and customizable docs chrome.",
+    "Agenetix Docs is an App Router-native MDX documentation library for Next.js with locale-aware routes, a flexible theme system, built-in mobile docs UX, search, TOC, and customizable docs chrome.",
   icons: {
     icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23171717'/></svg>",
   },

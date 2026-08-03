@@ -52,7 +52,7 @@ export async function DocsMdx({ entry, content, components }: DocsMdxProps) {
   const source = content ?? entry?.content ?? "";
 
   return (
-    <div className="emcydocs-prose">
+    <div className="agenetixdocs-prose">
       <MDXRemote
         source={source}
         options={{
@@ -147,8 +147,8 @@ function createHeadingComponent(tag: "h1" | "h2" | "h3" | "h4") {
       <Tag
         id={headingId}
         className={[
-          "emcydocs-heading",
-          `emcydocs-heading-${tag}`,
+          "agenetixdocs-heading",
+          `agenetixdocs-heading-${tag}`,
           className ?? "",
         ]
           .filter(Boolean)
@@ -158,7 +158,7 @@ function createHeadingComponent(tag: "h1" | "h2" | "h3" | "h4") {
         <span>{children}</span>
         <a
           href={`#${headingId}`}
-          className="emcydocs-heading-anchor"
+          className="agenetixdocs-heading-anchor"
           data-docs-anchor
           aria-label={`Copy link to ${text}`}
         >
