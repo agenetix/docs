@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "Agenetix Docs",
+    "brand": "MCP Stack Docs",
     "github": "GitHub",
     "npm": "npm"
   },
@@ -29,11 +29,11 @@
       "documentation": "文档",
       "license": "MIT 许可证"
     },
-    "copyright": "Agenetix Docs. 保留所有权利。"
+    "copyright": "MCP Stack Docs. 保留所有权利。"
   },
   "docs": {
     "layout": {
-      "brand": "Agenetix Docs",
+      "brand": "MCP Stack Docs",
       "classicDocs": "经典文档",
       "defaultDocs": "默认文档"
     }
@@ -43,7 +43,7 @@
       "heroBadge": "已发布到 npm",
       "heroTitlePrimary": "真正",
       "heroTitleAccent": "驻留在应用中的文档",
-      "heroDescription": "Agenetix Docs 是一个面向 Next.js 的 App Router 原生 MDX 文档库。文件式内容、按语言感知的路由、灵活的主题系统，以及移动端优先的体验，全部内置。",
+      "heroDescription": "MCP Stack Docs 是一个面向 Next.js 的 App Router 原生 MDX 文档库。文件式内容、按语言感知的路由、灵活的主题系统，以及移动端优先的体验，全部内置。",
       "primaryCta": "开始使用",
       "secondaryCta": "查看 GitHub",
       "terminalLabel": "终端",
@@ -157,7 +157,7 @@
       "updatedOnLabel": "更新于",
       "tagsLabel": "标签",
       "suggestedLabel": "推荐文章",
-      "suggestedDescription": "继续阅读更多关于 Agenetix Docs 示例内容的实现笔记、发布说明和模式整理。",
+      "suggestedDescription": "继续阅读更多关于 MCP Stack Docs 示例内容的实现笔记、发布说明和模式整理。",
       "readMoreLabel": "继续阅读",
       "readingTimeSuffix": "分钟阅读"
     }

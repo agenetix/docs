@@ -19,7 +19,7 @@ export default function Tabs({ defaultValue, children }: TabsProps) {
 
   return (
     <TabsContext.Provider value={{ activeTab, setActiveTab }}>
-      <div className="agenetixdocs-tabs">{children}</div>
+      <div className="emcydocs-tabs">{children}</div>
     </TabsContext.Provider>
   );
 }
@@ -29,7 +29,7 @@ interface TabsListProps {
 }
 
 export function TabsList({ children }: TabsListProps) {
-  return <div className="agenetixdocs-tabs-list">{children}</div>;
+  return <div className="emcydocs-tabs-list">{children}</div>;
 }
 
 interface TabsTriggerProps {
@@ -46,7 +46,7 @@ export function TabsTrigger({ value, children }: TabsTriggerProps) {
   return (
     <button
       type="button"
-      className={`agenetixdocs-tabs-trigger ${isActive ? "is-active" : ""}`}
+      className={`emcydocs-tabs-trigger ${isActive ? "is-active" : ""}`}
       onClick={() => context.setActiveTab(value)}
     >
       {children}
@@ -65,5 +65,5 @@ export function TabsContent({ value, children }: TabsContentProps) {
 
   if (context.activeTab !== value) return null;
 
-  return <div className="agenetixdocs-tabs-content">{children}</div>;
+  return <div className="emcydocs-tabs-content">{children}</div>;
 }

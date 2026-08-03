@@ -20,16 +20,16 @@ export default function Banner({
 }: BannerProps) {
   const content = (
     <>
-      <div className="agenetixdocs-banner-copy">
-        {eyebrow ? <span className="agenetixdocs-banner-eyebrow">{eyebrow}</span> : null}
-        <div className="agenetixdocs-banner-title-row">
-          {icon ? <span className="agenetixdocs-banner-icon">{icon}</span> : null}
-          <h3 className="agenetixdocs-banner-title">{title}</h3>
+      <div className="emcydocs-banner-copy">
+        {eyebrow ? <span className="emcydocs-banner-eyebrow">{eyebrow}</span> : null}
+        <div className="emcydocs-banner-title-row">
+          {icon ? <span className="emcydocs-banner-icon">{icon}</span> : null}
+          <h3 className="emcydocs-banner-title">{title}</h3>
         </div>
-        {children ? <div className="agenetixdocs-banner-body">{children}</div> : null}
+        {children ? <div className="emcydocs-banner-body">{children}</div> : null}
       </div>
       {href ? (
-        <span className="agenetixdocs-banner-action">
+        <span className="emcydocs-banner-action">
           <span>{actionLabel}</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M5 12h14M13 5l7 7-7 7" />
@@ -41,11 +41,11 @@ export default function Banner({
 
   if (href) {
     return (
-      <Link href={href} className="agenetixdocs-banner agenetixdocs-banner-link">
+      <Link href={href} className="emcydocs-banner emcydocs-banner-link">
         {content}
       </Link>
     );
   }
 
-  return <section className="agenetixdocs-banner">{content}</section>;
+  return <section className="emcydocs-banner">{content}</section>;
 }

@@ -13,8 +13,8 @@ const sharedConfig = {
   defaultLocale: defaultSiteLocale,
   locales: [...docsLocales],
   hideDefaultLocaleInUrl: hideDefaultSiteLocaleInUrl,
-  siteTitle: "Agenetix Docs",
-  titleSuffix: "Agenetix Docs",
+  siteTitle: "MCP Stack Docs",
+  titleSuffix: "MCP Stack Docs",
   sectionOrder: ["", "guides", "layouts", "internationalization", "reference"],
 };
 

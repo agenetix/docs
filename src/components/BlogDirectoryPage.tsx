@@ -25,17 +25,17 @@ export default function BlogDirectoryPage({
   locale?: string;
 }) {
   return (
-    <div className="agenetixdocs-blog-directory">
-      <section className="agenetixdocs-blog-directory-hero">
+    <div className="emcydocs-blog-directory">
+      <section className="emcydocs-blog-directory-hero">
         <div>
           <h1>{copy.title}</h1>
           {copy.description ? <p>{copy.description}</p> : null}
         </div>
       </section>
 
-      <section className="agenetixdocs-blog-directory-controls">
-        <div className="agenetixdocs-blog-directory-panel">
-          <div className="agenetixdocs-blog-directory-heading">
+      <section className="emcydocs-blog-directory-controls">
+        <div className="emcydocs-blog-directory-panel">
+          <div className="emcydocs-blog-directory-heading">
             <h2>{copy.categoriesLabel}</h2>
           </div>
           <BlogCategories
@@ -47,8 +47,8 @@ export default function BlogDirectoryPage({
           />
         </div>
 
-        <div className="agenetixdocs-blog-directory-panel">
-          <div className="agenetixdocs-blog-directory-heading">
+        <div className="emcydocs-blog-directory-panel">
+          <div className="emcydocs-blog-directory-heading">
             <h2>{copy.searchLabel}</h2>
           </div>
           <BlogSearch
@@ -62,7 +62,7 @@ export default function BlogDirectoryPage({
 
       {directory.items.length > 0 ? (
         <>
-          <section className="agenetixdocs-blog-grid">
+          <section className="emcydocs-blog-grid">
             {directory.items.map((post) => (
               <BlogCard key={`${post.slug}-${post.locale}`} post={post} copy={cardCopy} locale={locale} />
             ))}
@@ -78,7 +78,7 @@ export default function BlogDirectoryPage({
           />
         </>
       ) : (
-        <section className="agenetixdocs-blog-empty">
+        <section className="emcydocs-blog-empty">
           <h2>{copy.noResultsTitle}</h2>
           <p>{copy.noResultsDescription}</p>
         </section>

@@ -12,7 +12,7 @@ import {
   type DocsThemeTokens,
 } from "@agenetix/docs";
 
-export const DOCS_THEME_STORAGE_KEY = "agenetixdocs-docs-theme-v2";
+export const DOCS_THEME_STORAGE_KEY = "emcydocs-docs-theme-v2";
 export const DOCS_THEME_PARAM_KEY = "docsTheme";
 
 export const docsThemePresetOptions: Array<{
@@ -205,7 +205,7 @@ export function createDocsThemeShareUrl(
   theme: DocsThemeConfig,
   defaults: DocsThemeConfig
 ) {
-  const url = new URL(pathname + currentSearch, "http://agenetixdocs.local");
+  const url = new URL(pathname + currentSearch, "http://mcpstackdocs.local");
   const encoded = encodeDocsThemeParam(theme, defaults);
 
   if (encoded) {

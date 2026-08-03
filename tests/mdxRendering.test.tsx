@@ -63,7 +63,7 @@ describe("MDX rendering", () => {
     );
 
     await waitFor(() =>
-      expect(container.querySelector(".agenetixdocs-mermaid")).toBeInTheDocument()
+      expect(container.querySelector(".emcydocs-mermaid")).toBeInTheDocument()
     );
     expect(container.querySelector("[data-rehype-pretty-code-figure]")).not.toBeInTheDocument();
     await waitFor(() => expect(container.querySelector("svg")).toBeInTheDocument());
@@ -73,7 +73,7 @@ describe("MDX rendering", () => {
   it("restores prose list markers after CSS resets", () => {
     const styles = readFileSync(join(process.cwd(), "src/styles.css"), "utf8");
 
-    expect(styles).toMatch(/\.agenetixdocs-prose ul\s*\{[^}]*list-style-type:\s*disc;/s);
-    expect(styles).toMatch(/\.agenetixdocs-prose ol\s*\{[^}]*list-style-type:\s*decimal;/s);
+    expect(styles).toMatch(/\.emcydocs-prose ul\s*\{[^}]*list-style-type:\s*disc;/s);
+    expect(styles).toMatch(/\.emcydocs-prose ol\s*\{[^}]*list-style-type:\s*decimal;/s);
   });
 });
