@@ -30,15 +30,15 @@ export default async function BlogPostPage({
   };
 
   return (
-    <div className="agenetixdocs-blog-post">
-      <article className="agenetixdocs-blog-post-article">
-        <Link href={backHref} className="agenetixdocs-blog-back-link">
+    <div className="emcydocs-blog-post">
+      <article className="emcydocs-blog-post-article">
+        <Link href={backHref} className="emcydocs-blog-back-link">
           {copy.backLabel}
         </Link>
 
-        <header className="agenetixdocs-blog-post-header">
-          <div className="agenetixdocs-blog-post-meta">
-            <span className="agenetixdocs-blog-post-category">{entry.category}</span>
+        <header className="emcydocs-blog-post-header">
+          <div className="emcydocs-blog-post-meta">
+            <span className="emcydocs-blog-post-category">{entry.category}</span>
             <span>
               {copy.publishedOnLabel} {formattedPublishedDate}
             </span>
@@ -50,23 +50,23 @@ export default async function BlogPostPage({
           <h1>{entry.title}</h1>
           {entry.description ? <p>{entry.description}</p> : null}
 
-          <div className="agenetixdocs-blog-author">
+          <div className="emcydocs-blog-author">
             {entry.authorImage ? (
               <Image
                 src={entry.authorImage}
                 alt={entry.author}
-                className="agenetixdocs-blog-author-image"
+                className="emcydocs-blog-author-image"
                 width={48}
                 height={48}
                 unoptimized
               />
             ) : (
-              <div className="agenetixdocs-blog-author-image is-fallback" aria-hidden="true">
+              <div className="emcydocs-blog-author-image is-fallback" aria-hidden="true">
                 {entry.author.charAt(0).toUpperCase()}
               </div>
             )}
 
-            <div className="agenetixdocs-blog-author-copy">
+            <div className="emcydocs-blog-author-copy">
               <span>{copy.writtenByLabel}</span>
               <strong>{entry.author}</strong>
               {entry.authorRole ? <p>{entry.authorRole}</p> : null}
@@ -80,11 +80,11 @@ export default async function BlogPostPage({
         </header>
 
         {entry.image ? (
-          <div className="agenetixdocs-blog-post-image-wrap">
+          <div className="emcydocs-blog-post-image-wrap">
             <Image
               src={entry.image}
               alt={entry.imageAlt || entry.title}
-              className="agenetixdocs-blog-post-image"
+              className="emcydocs-blog-post-image"
               fill
               sizes="100vw"
               unoptimized
@@ -92,16 +92,16 @@ export default async function BlogPostPage({
           </div>
         ) : null}
 
-        <div className="agenetixdocs-blog-post-content">
+        <div className="emcydocs-blog-post-content">
           <DocsMdx entry={entry} components={components} />
         </div>
 
         {entry.tags.length > 0 ? (
-          <footer className="agenetixdocs-blog-post-footer">
+          <footer className="emcydocs-blog-post-footer">
             <span>{copy.tagsLabel}</span>
-            <div className="agenetixdocs-blog-post-tags">
+            <div className="emcydocs-blog-post-tags">
               {entry.tags.map((tag) => (
-                <span key={tag} className="agenetixdocs-blog-post-tag">
+                <span key={tag} className="emcydocs-blog-post-tag">
                   {tag}
                 </span>
               ))}
@@ -111,15 +111,15 @@ export default async function BlogPostPage({
       </article>
 
       {suggestedEntries.length > 0 ? (
-        <section className="agenetixdocs-blog-suggested">
-          <div className="agenetixdocs-blog-suggested-header">
+        <section className="emcydocs-blog-suggested">
+          <div className="emcydocs-blog-suggested-header">
             <div>
               <h2>{copy.suggestedLabel}</h2>
               {copy.suggestedDescription ? <p>{copy.suggestedDescription}</p> : null}
             </div>
           </div>
 
-          <div className="agenetixdocs-blog-grid">
+          <div className="emcydocs-blog-grid">
             {suggestedEntries.map((post) => (
               <BlogCard key={`${post.slug}-${post.locale}`} post={post} copy={cardCopy} locale={locale} />
             ))}

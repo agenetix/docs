@@ -29,7 +29,7 @@ const layoutIcons = [BookOpen, Palette, Layers, Sparkles];
 export default function MarketingHomePage({ locale }: { locale: RouteLocale }) {
   const copy = getPageDictionary(locale, "marketingHome");
   const docsHref = buildLocalizedHref("/docs", locale);
-  const githubUrl = "https://github.com/ross-slaney/agenetix-docs";
+  const githubUrl = "https://github.com/ross-slaney/mcpstack-docs";
   const npmUrl = "https://www.npmjs.com/package/@agenetix/docs";
 
   return (
@@ -328,7 +328,7 @@ function DocsPreview({ command }: { command: string }) {
           <span className="h-2.5 w-2.5 rounded-full bg-red-500/90" />
           <span className="h-2.5 w-2.5 rounded-full bg-amber-400/90" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/90" />
-          <span className="ml-2 font-mono text-[10px] text-muted-foreground">agenetixdocs — docs</span>
+          <span className="ml-2 font-mono text-[10px] text-muted-foreground">mcpstackdocs — docs</span>
         </div>
         <span className="rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 font-mono text-[10px] text-primary">
           ⌘K

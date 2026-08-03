@@ -57,21 +57,21 @@ export default function Mermaid({ chart, caption, children }: MermaidProps) {
 
   if (error) {
     return (
-      <div className="agenetixdocs-mermaid agenetixdocs-mermaid-error">
+      <div className="emcydocs-mermaid emcydocs-mermaid-error">
         <p>Diagram error: {error}</p>
       </div>
     );
   }
 
   return (
-    <figure className="agenetixdocs-mermaid">
+    <figure className="emcydocs-mermaid">
       <div
         ref={containerRef}
-        className="agenetixdocs-mermaid-svg"
+        className="emcydocs-mermaid-svg"
         dangerouslySetInnerHTML={svg ? { __html: svg } : undefined}
       />
       {caption ? (
-        <figcaption className="agenetixdocs-mermaid-caption">{caption}</figcaption>
+        <figcaption className="emcydocs-mermaid-caption">{caption}</figcaption>
       ) : null}
     </figure>
   );
