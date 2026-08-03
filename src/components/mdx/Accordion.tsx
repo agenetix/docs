@@ -5,7 +5,7 @@ interface AccordionProps {
 }
 
 export default function Accordion({ children }: AccordionProps) {
-  return <div className="emcydocs-accordion">{children}</div>;
+  return <div className="agenetixdocs-accordion">{children}</div>;
 }
 
 interface AccordionItemProps {
@@ -20,11 +20,11 @@ export function AccordionItem({
   defaultOpen = false,
 }: AccordionItemProps) {
   return (
-    <details className="emcydocs-accordion-item" open={defaultOpen}>
-      <summary className="emcydocs-accordion-summary">
+    <details className="agenetixdocs-accordion-item" open={defaultOpen}>
+      <summary className="agenetixdocs-accordion-summary">
         <span>{title}</span>
         <svg
-          className="emcydocs-accordion-chevron"
+          className="agenetixdocs-accordion-chevron"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -33,7 +33,7 @@ export function AccordionItem({
           <path d="M6 9l6 6 6-6" />
         </svg>
       </summary>
-      <div className="emcydocs-accordion-panel">{children}</div>
+      <div className="agenetixdocs-accordion-panel">{children}</div>
     </details>
   );
 }

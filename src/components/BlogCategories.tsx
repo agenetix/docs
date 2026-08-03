@@ -20,7 +20,7 @@ export default function BlogCategories({
   ];
 
   return (
-    <div className="emcydocs-blog-categories" role="list">
+    <div className="agenetixdocs-blog-categories" role="list">
       {options.map((option) => {
         const isActive = option.value === selectedCategory;
 
@@ -33,7 +33,7 @@ export default function BlogCategories({
               category: option.value,
             })}
             className={[
-              "emcydocs-blog-category-chip",
+              "agenetixdocs-blog-category-chip",
               isActive ? "is-active" : "",
             ]
               .filter(Boolean)

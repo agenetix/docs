@@ -16,16 +16,16 @@ export default function MobileDocsChrome({
   children?: ReactNode;
 }) {
   return (
-    <div className="emcydocs-mobile">
-      <div className="emcydocs-mobile-row">
-        <span className="emcydocs-mobile-title">{currentTitle}</span>
-        <div className="emcydocs-mobile-actions">
+    <div className="agenetixdocs-mobile">
+      <div className="agenetixdocs-mobile-row">
+        <span className="agenetixdocs-mobile-title">{currentTitle}</span>
+        <div className="agenetixdocs-mobile-actions">
           {children}
           {showNavigationToggle ? (
             <button
               type="button"
-              className="emcydocs-mobile-toggle"
-              aria-controls="emcydocs-mobile-nav"
+              className="agenetixdocs-mobile-toggle"
+              aria-controls="agenetixdocs-mobile-nav"
               aria-expanded={isNavOpen}
               aria-label={isNavOpen ? "Close menu" : "Open menu"}
               data-state={isNavOpen ? "open" : "closed"}

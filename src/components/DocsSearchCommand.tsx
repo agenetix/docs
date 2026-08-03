@@ -57,12 +57,12 @@ export default function DocsSearchCommand({
   }, [onOpenChange, search]);
 
   return (
-    <dialog ref={dialogRef} className="emcydocs-search-dialog">
-      <div className="emcydocs-search-dialog-panel">
-        <div className="emcydocs-search-dialog-header">
-          <div className="emcydocs-search-input-wrap emcydocs-search-input-wrap-dialog">
+    <dialog ref={dialogRef} className="agenetixdocs-search-dialog">
+      <div className="agenetixdocs-search-dialog-panel">
+        <div className="agenetixdocs-search-dialog-header">
+          <div className="agenetixdocs-search-input-wrap agenetixdocs-search-input-wrap-dialog">
             <svg
-              className="emcydocs-search-icon"
+              className="agenetixdocs-search-icon"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -76,7 +76,7 @@ export default function DocsSearchCommand({
               type="search"
               value={search.query}
               placeholder={placeholder}
-              className="emcydocs-search-input"
+              className="agenetixdocs-search-input"
               onChange={(event) => {
                 search.setQuery(event.target.value);
                 search.setIsOpen(true);
@@ -85,18 +85,18 @@ export default function DocsSearchCommand({
               disabled={!searchAction}
               autoComplete="off"
             />
-            <span className="emcydocs-search-kbd">ESC</span>
+            <span className="agenetixdocs-search-kbd">ESC</span>
           </div>
           <button
             type="button"
-            className="emcydocs-search-dialog-close"
+            className="agenetixdocs-search-dialog-close"
             aria-label="Close search"
             onClick={() => onOpenChange(false)}
           >
             ×
           </button>
         </div>
-        <div className="emcydocs-search-dialog-body">
+        <div className="agenetixdocs-search-dialog-body">
           <DocsSearchResults
             visibleResults={search.visibleResults}
             activeIndex={search.activeIndex}

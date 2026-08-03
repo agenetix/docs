@@ -121,8 +121,8 @@ jobs:
 
           az acr build \
             --registry "$ACR_NAME" \
-            --image emcydocs-web:"$IMAGE_TAG" \
-            --image emcydocs-web:latest \
+            --image agenetixdocs-web:"$IMAGE_TAG" \
+            --image agenetixdocs-web:latest \
             --file site/Dockerfile \
             .
 
@@ -132,7 +132,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          APP_IMAGE="${ACR_LOGIN_SERVER}/emcydocs-web:${IMAGE_TAG}"
+          APP_IMAGE="${ACR_LOGIN_SERVER}/agenetixdocs-web:${IMAGE_TAG}"
 
           az deployment group create \
             --resource-group "$AZURE_RESOURCE_GROUP" \

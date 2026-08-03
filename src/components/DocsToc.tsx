@@ -55,16 +55,16 @@ export default function DocsToc({
   }
 
   return (
-    <div className="emcydocs-toc">
-      <p className="emcydocs-toc-title">{title}</p>
-      <nav className="emcydocs-toc-nav">
+    <div className="agenetixdocs-toc">
+      <p className="agenetixdocs-toc-title">{title}</p>
+      <nav className="agenetixdocs-toc-nav">
         {visibleHeadings.map((heading) => (
           <a
             key={heading.id}
             href={`#${heading.id}`}
             className={[
-              "emcydocs-toc-link",
-              heading.level >= 3 ? "emcydocs-toc-link-sub" : "",
+              "agenetixdocs-toc-link",
+              heading.level >= 3 ? "agenetixdocs-toc-link-sub" : "",
               activeId === heading.id ? "is-active" : "",
             ]
               .filter(Boolean)
