@@ -1,6 +1,6 @@
 {
   "name": "@agenetix/docs",
-  "version": "1.0.2",
+  "version": "1.1.1",
   "description": "App Router-native MDX documentation for Next.js with reusable layouts, search, TOC, and locale-aware routing.",
   "type": "module",
   "main": "dist/index.js",
