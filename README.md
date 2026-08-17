@@ -274,9 +274,17 @@ From `sqlos/web`, use a local file dependency:
 
 The SqlOS repo also includes helper scripts to switch between a local file dependency and a published npm version.
 
-## Release flow
+## Publishing
 
-- Merge to `main` with passing CI
-- Tag a release like `v0.1.0`
-- Push the tag
-- GitHub Actions rebuilds, retests, and publishes `@agenetix/docs` to npm
+`publish-npm.yml` is the only npm publish entry point. Merging to `main` does not publish `latest`.
+
+- **Pull request against `main`** — publishes a preview dist-tag, for example `@agenetix/docs@pr-12`. The workflow comments with the exact package ref.
+- **`v*` tag** (for example `v1.1.3`) — publishes `latest`. Bump `package.json` first; npm will not overwrite an already-published version.
+
+To try a preview in a platform PR, add the ref to `infra/preview-packages.json`:
+
+```json
+{
+  "@agenetix/docs": "@agenetix/docs@pr-12"
+}
+```
