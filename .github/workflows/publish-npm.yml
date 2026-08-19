@@ -107,7 +107,7 @@ jobs:
           PACKAGE_URL: ${{ steps.meta.outputs.package_url }}
         with:
           script: |
-            const marker = `<!-- mcpstack-preview-package:${process.env.PACKAGE_NAME} -->`;
+            const marker = `<!-- agenetix-preview-package:${process.env.PACKAGE_NAME} -->`;
             const manifestSnippet = JSON.stringify({ [process.env.PACKAGE_NAME]: process.env.TAG_REF }, null, 2);
             const body = [
               marker,

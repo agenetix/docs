@@ -205,7 +205,7 @@ export function createDocsThemeShareUrl(
   theme: DocsThemeConfig,
   defaults: DocsThemeConfig
 ) {
-  const url = new URL(pathname + currentSearch, "http://mcpstackdocs.local");
+  const url = new URL(pathname + currentSearch, "http://agenetixdocs.local");
   const encoded = encodeDocsThemeParam(theme, defaults);
 
   if (encoded) {
