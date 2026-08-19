@@ -75,7 +75,7 @@ describe("docs theme studio helpers", () => {
       customTheme,
       docsClassicTheme
     );
-    const shareUrl = new URL(`https://mcpstackdocs.dev${sharePath}`);
+    const shareUrl = new URL(`https://agenetixdocs.dev${sharePath}`);
     const decodedTheme = decodeDocsThemeParam(
       shareUrl.searchParams.get(DOCS_THEME_PARAM_KEY)
     );

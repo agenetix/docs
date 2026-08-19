@@ -1,4 +1,4 @@
-name: MCP Stack Docs Checks (Main)
+name: Agenetix Docs Checks (Main)
 
 on:
   push:
