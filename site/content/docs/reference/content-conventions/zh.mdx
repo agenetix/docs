@@ -20,3 +20,11 @@ Agenetix Docs 支持：
 ## 章节
 
 第一个路径片段通常会成为章节 key。这让导航主要由文件系统驱动，同时仍然允许你在 source 层配置标签和顺序。
+
+## 嵌套分组
+
+当路径比 `section/page` 更深时，第二段会成为分组。也可以在 frontmatter 里写 `group`。`sectionOrder` 可用 `section/group` 来排列分组。侧栏在桌面和移动端都会折叠分区，并展开当前页所在的分区和分组。
+
+## 从侧栏隐藏页面
+
+`sidebar: false` 会保留路由和搜索，但不出现在导航里。

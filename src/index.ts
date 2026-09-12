@@ -1,4 +1,4 @@
-export { createDocsSource, extractHeadings, toNavItem } from "./server/docs";
+export { createDocsSource, extractHeadings, flattenNavItems, toNavItem } from "./server/docs";
 export { createBlogSource } from "./server/blog";
 export {
   DocsMdx,

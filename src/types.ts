@@ -37,6 +37,9 @@ export interface DocsEntryMeta {
   order: number;
   section: string | null;
   sectionLabel: string;
+  group: string | null;
+  groupLabel: string | null;
+  sidebar: boolean;
   locale: string;
   contentLocale: string;
   availableLocales: string[];
@@ -55,6 +58,7 @@ export interface DocsNavSection {
   key: string;
   label: string;
   items: DocsNavItem[];
+  groups: DocsNavSection[];
 }
 
 export interface DocsRouteResolution {
@@ -87,6 +91,7 @@ export interface DocsSourceConfig {
   titleSuffix?: string;
   sectionLabels?: Record<string, string>;
   sectionOrder?: string[];
+  groupLabels?: Record<string, string>;
   searchLimit?: number;
 }
 
@@ -94,7 +99,12 @@ export interface DocsSource {
   config: Required<
     Omit<
       DocsSourceConfig,
-      "siteTitle" | "titleSuffix" | "sectionLabels" | "sectionOrder" | "homeRedirect"
+      | "siteTitle"
+      | "titleSuffix"
+      | "sectionLabels"
+      | "sectionOrder"
+      | "groupLabels"
+      | "homeRedirect"
     >
   > & {
     homeRedirectSlugs: string[];
@@ -102,6 +112,7 @@ export interface DocsSource {
     titleSuffix?: string;
     sectionLabels: Record<string, string>;
     sectionOrder: string[];
+    groupLabels: Record<string, string>;
   };
   getSupportedLocales(): string[];
   getDefaultLocale(): string;

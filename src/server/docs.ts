@@ -17,6 +17,7 @@ import type {
 } from "../types";
 import {
   buildDocsHref,
+  flattenNavItems,
   humanizeSlug,
   normalizeBasePath,
   normalizeSlugs,
@@ -36,6 +37,14 @@ interface ParsedFrontmatter {
   order?: number;
   section?: string;
   sectionLabel?: string;
+  group?: string;
+  groupLabel?: string;
+  sidebar?: boolean;
+}
+
+interface NavigationBucket {
+  ungrouped: DocsNavItem[];
+  groups: Map<string, DocsNavItem[]>;
 }
 
 export function createDocsSource(input: DocsSourceConfig): DocsSource {
@@ -51,6 +60,7 @@ export function createDocsSource(input: DocsSourceConfig): DocsSource {
     titleSuffix: input.titleSuffix ?? input.siteTitle,
     sectionLabels: input.sectionLabels ?? {},
     sectionOrder: input.sectionOrder ?? [],
+    groupLabels: input.groupLabels ?? {},
     searchLimit: input.searchLimit ?? 8,
   };
 
@@ -100,17 +110,29 @@ export function createDocsSource(input: DocsSourceConfig): DocsSource {
   };
 
   const getNavigation = (locale: string = config.defaultLocale): DocsNavSection[] => {
-    const sections = new Map<string, DocsNavItem[]>();
+    const sections = new Map<string, NavigationBucket>();
 
     for (const entry of getAllEntries(locale)) {
-      if (entry.isHome) {
+      if (entry.isHome || !entry.sidebar) {
         continue;
       }
 
       const key = entry.section ?? "";
-      const existing = sections.get(key) ?? [];
-      existing.push(toNavItem(entry));
-      sections.set(key, existing);
+      const bucket: NavigationBucket = sections.get(key) ?? {
+        ungrouped: [],
+        groups: new Map(),
+      };
+      const item = toNavItem(entry);
+
+      if (entry.group) {
+        const groupItems = bucket.groups.get(entry.group) ?? ([] as DocsNavItem[]);
+        groupItems.push(item);
+        bucket.groups.set(entry.group, groupItems);
+      } else {
+        bucket.ungrouped.push(item);
+      }
+
+      sections.set(key, bucket);
     }
 
     const keys = Array.from(sections.keys()).sort((left, right) => {
@@ -127,23 +149,40 @@ export function createDocsSource(input: DocsSourceConfig): DocsSource {
     });
 
     return keys.map((key) => {
-      const items = (sections.get(key) ?? []).sort(compareEntries(config.sectionOrder));
+      const bucket: NavigationBucket = sections.get(key) ?? {
+        ungrouped: [],
+        groups: new Map(),
+      };
+      const items = bucket.ungrouped.sort(compareEntries(config.sectionOrder));
+      const groups = Array.from(bucket.groups.entries())
+        .map(([groupKey, groupItems]) => {
+          const sortedItems = groupItems.sort(compareEntries(config.sectionOrder));
+          return {
+            key: groupKey,
+            label: resolveGroupLabel(key, groupKey, sortedItems, config),
+            items: sortedItems,
+            groups: [],
+          };
+        })
+        .sort(compareGroups(key, config.sectionOrder));
       const label =
         config.sectionLabels[key] ||
         items[0]?.sectionLabel ||
+        groups[0]?.items[0]?.sectionLabel ||
         (key ? humanizeSlug(key) : "Guides");
 
       return {
         key,
         label,
         items,
+        groups,
       };
     });
   };
 
   const getSectionLanding = (section: string, locale: string = config.defaultLocale) => {
     const navSection = getNavigation(locale).find((item) => item.key === section);
-    return navSection?.items[0] ?? null;
+    return navSection ? flattenNavItems([navSection])[0] ?? null : null;
   };
 
   const getAdjacentEntries = (
@@ -151,7 +190,7 @@ export function createDocsSource(input: DocsSourceConfig): DocsSource {
     locale: string = config.defaultLocale
   ) => {
     const normalized = normalizeSlugs(slugs).join("/");
-    const flat = getNavigation(locale).flatMap((section) => section.items);
+    const flat = flattenNavItems(getNavigation(locale));
     const index = flat.findIndex((entry) => entry.slugs.join("/") === normalized);
 
     return {
@@ -404,6 +443,14 @@ function materializeRecord(
     (section !== null && config.sectionLabels[section]) ||
     frontmatter.sectionLabel ||
     (section ? humanizeSlug(section) : config.sectionLabels[""] || "Guides");
+  const group = isHome
+    ? null
+    : normalizeGroupKey(frontmatter.group) ??
+      (record.slugs.length > 2 ? record.slugs[1] : null);
+  const groupLabel = group
+    ? resolveGroupLabel(section ?? "", group, [], config, frontmatter.groupLabel)
+    : null;
+  const sidebar = isHome ? false : frontmatter.sidebar !== false;
   const headings = extractHeadings(content);
   const href = buildDocsHref({
     basePath: config.basePath,
@@ -425,6 +472,9 @@ function materializeRecord(
     order: typeof frontmatter.order === "number" ? frontmatter.order : 999,
     section,
     sectionLabel,
+    group,
+    groupLabel,
+    sidebar,
     locale: requestedLocale,
     contentLocale,
     availableLocales: availableLocales.length > 0 ? availableLocales : [config.defaultLocale],
@@ -445,10 +495,53 @@ export function toNavItem(entry: DocsEntry): DocsNavItem {
     order: entry.order,
     section: entry.section,
     sectionLabel: entry.sectionLabel,
+    group: entry.group,
+    groupLabel: entry.groupLabel,
+    sidebar: entry.sidebar,
     locale: entry.locale,
     contentLocale: entry.contentLocale,
     availableLocales: entry.availableLocales,
     isHome: entry.isHome,
+  };
+}
+
+export { flattenNavItems };
+
+function normalizeGroupKey(value?: string): string | null {
+  const normalized = value?.trim();
+  return normalized ? normalized : null;
+}
+
+function resolveGroupLabel(
+  section: string,
+  group: string,
+  items: DocsNavItem[],
+  config: DocsSource["config"],
+  frontmatterLabel?: string
+): string {
+  return (
+    config.groupLabels[`${section}/${group}`] ||
+    config.groupLabels[group] ||
+    frontmatterLabel ||
+    items.find((item) => item.groupLabel)?.groupLabel ||
+    humanizeSlug(group)
+  );
+}
+
+function compareGroups(section: string, sectionOrder: string[]) {
+  return (left: DocsNavSection, right: DocsNavSection) => {
+    const leftIndex = sectionOrder.indexOf(`${section}/${left.key}`);
+    const rightIndex = sectionOrder.indexOf(`${section}/${right.key}`);
+
+    if (leftIndex >= 0 || rightIndex >= 0) {
+      if (leftIndex < 0) return 1;
+      if (rightIndex < 0) return -1;
+      if (leftIndex !== rightIndex) {
+        return leftIndex - rightIndex;
+      }
+    }
+
+    return left.label.localeCompare(right.label);
   };
 }
 

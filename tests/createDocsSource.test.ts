@@ -1,6 +1,7 @@
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { createDocsSource } from "../src/server/docs";
+import { flattenNavItems } from "../src/utils";
 
 const source = createDocsSource({
   contentDir: path.join(process.cwd(), "tests/fixtures/docs"),
@@ -11,9 +12,13 @@ const source = createDocsSource({
   sectionLabels: {
     "": "Getting Started",
     "getting-started": "Getting Started",
+    "sign-in": "Sign-in",
     reference: "Reference",
   },
-  sectionOrder: ["getting-started", "reference"],
+  groupLabels: {
+    "sign-in/social": "Social",
+  },
+  sectionOrder: ["getting-started", "sign-in", "sign-in/social", "reference"],
   siteTitle: "Fixture Docs",
 });
 
@@ -27,9 +32,13 @@ const redirectedHomeSource = createDocsSource({
   sectionLabels: {
     "": "Getting Started",
     "getting-started": "Getting Started",
+    "sign-in": "Sign-in",
     reference: "Reference",
   },
-  sectionOrder: ["getting-started", "reference"],
+  groupLabels: {
+    "sign-in/social": "Social",
+  },
+  sectionOrder: ["getting-started", "sign-in", "sign-in/social", "reference"],
   siteTitle: "Fixture Docs",
 });
 
@@ -82,7 +91,7 @@ describe("createDocsSource", () => {
 
   it("returns metadata-only navigation items without doc bodies", () => {
     const navigation = source.getNavigation();
-    const items = navigation.flatMap((section) => section.items);
+    const items = flattenNavItems(navigation);
 
     expect(items.length).toBeGreaterThan(0);
 
@@ -91,6 +100,30 @@ describe("createDocsSource", () => {
       expect(item).not.toHaveProperty("headings");
       expect(item).not.toHaveProperty("filePath");
     }
+  });
+
+  it("nests groups from path segments or frontmatter and hides sidebar: false pages", () => {
+    const navigation = source.getNavigation();
+    const signIn = navigation.find((section) => section.key === "sign-in");
+    const hidden = source.getEntry(["sign-in", "hidden"]);
+
+    expect(signIn?.items.map((item) => item.title)).toEqual(["Password sign-in"]);
+    expect(signIn?.groups).toEqual([
+      expect.objectContaining({
+        key: "social",
+        label: "Social",
+        items: [
+          expect.objectContaining({ title: "Google sign-in", group: "social" }),
+          expect.objectContaining({ title: "Apple sign-in", group: "social" }),
+        ],
+      }),
+    ]);
+    expect(flattenNavItems(navigation).some((item) => item.title === "Hidden sign-in note")).toBe(
+      false
+    );
+    expect(hidden?.title).toBe("Hidden sign-in note");
+    expect(hidden?.sidebar).toBe(false);
+    expect(source.resolveRoute(["sign-in"]).href).toBe("/docs/sign-in/password");
   });
 
   it("uses the redirect target for root metadata and static params", () => {

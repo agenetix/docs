@@ -1,4 +1,11 @@
-import type { DocsHeading } from "./types";
+import type { DocsHeading, DocsNavItem, DocsNavSection } from "./types";
+
+export function flattenNavItems(sections: DocsNavSection[]): DocsNavItem[] {
+  return sections.flatMap((section) => [
+    ...section.items,
+    ...flattenNavItems(section.groups ?? []),
+  ]);
+}
 
 export function normalizeSlugs(
   slugs?: string[] | string | null

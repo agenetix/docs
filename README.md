@@ -23,6 +23,7 @@ The example site ships with a polished docs shell and an optional live theme stu
 
 - Keep docs as repo-local MDX instead of a separate CMS
 - Build navigation, route resolution, metadata, headings, and search from one `createDocsSource(...)` call
+- Group pages into collapsible sidebar sections, with optional nested groups and `sidebar: false` to keep a page out of the nav
 - Render docs with App Router-friendly primitives like `DocsLayout`, `DocsPage`, and `DocsHomePage`
 - Ship a polished baseline with `DocsSearch`, `DocsSidebar`, `DocsToc`, `HeadingLinks`, and `MobileDocsChrome`
 - Support locale-specific files like `getting-started/en.mdx`, `getting-started/es.mdx`, and `getting-started/zh.mdx`
@@ -64,7 +65,10 @@ export const docsSource = createDocsSource({
   defaultLocale: "en",
   locales: ["en", "es", "zh"],
   hideDefaultLocaleInUrl: true,
-  sectionOrder: ["", "guides", "reference"],
+  sectionOrder: ["", "guides", "guides/search", "reference"],
+  groupLabels: {
+    "guides/search": "Search",
+  },
 });
 ```
 
@@ -280,6 +284,8 @@ The SqlOS repo also includes helper scripts to switch between a local file depen
 
 - **Pull request against `main`** — publishes a preview dist-tag, for example `@agenetix/docs@pr-12`. The workflow comments with the exact package ref.
 - **`v*` tag** (for example `v1.1.3`) — publishes `latest`. Bump `package.json` first; npm will not overwrite an already-published version.
+
+npm provenance is omitted because this source repository is private. The package itself still publishes publicly through trusted publishing.
 
 To try a preview in a platform PR, add the ref to `infra/preview-packages.json`:
 

@@ -23,12 +23,16 @@ const navigation: DocsNavSection[] = [
         order: 1,
         section: "getting-started",
         sectionLabel: "Getting Started",
+        group: null,
+        groupLabel: null,
+        sidebar: true,
         locale: "en",
         contentLocale: "en",
         availableLocales: ["en"],
         isHome: false,
       },
     ],
+    groups: [],
   },
 ];
 
