@@ -285,6 +285,8 @@ The SqlOS repo also includes helper scripts to switch between a local file depen
 - **Pull request against `main`** — publishes a preview dist-tag, for example `@agenetix/docs@pr-12`. The workflow comments with the exact package ref.
 - **`v*` tag** (for example `v1.1.3`) — publishes `latest`. Bump `package.json` first; npm will not overwrite an already-published version.
 
+npm provenance is omitted because this source repository is private. The package itself still publishes publicly through trusted publishing.
+
 To try a preview in a platform PR, add the ref to `infra/preview-packages.json`:
 
 ```json
