@@ -602,6 +602,44 @@
   text-transform: uppercase;
 }
 
+.emcydocs-sidebar-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.emcydocs-sidebar-group-item {
+  list-style: none;
+}
+
+.emcydocs-sidebar-group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--emcydocs-control-padding-y) var(--emcydocs-control-padding-x);
+  border: none;
+  border-radius: calc(var(--radius) - 2px);
+  background: transparent;
+  color: hsl(var(--emcydocs-foreground));
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.emcydocs-sidebar-group-toggle:hover {
+  background: hsl(var(--emcydocs-accent));
+}
+
+.emcydocs-sidebar-group-toggle span:last-child {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: hsl(var(--emcydocs-muted-foreground));
+}
+
+.emcydocs-sidebar-group .emcydocs-sidebar-list {
+  padding-left: 0.5rem;
+}
+
 .emcydocs-sidebar-link.is-active {
   color: hsl(var(--emcydocs-primary));
   background: linear-gradient(

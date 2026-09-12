@@ -23,6 +23,7 @@ The example site ships with a polished docs shell and an optional live theme stu
 
 - Keep docs as repo-local MDX instead of a separate CMS
 - Build navigation, route resolution, metadata, headings, and search from one `createDocsSource(...)` call
+- Group pages into collapsible sidebar sections, with optional nested groups and `sidebar: false` to keep a page out of the nav
 - Render docs with App Router-friendly primitives like `DocsLayout`, `DocsPage`, and `DocsHomePage`
 - Ship a polished baseline with `DocsSearch`, `DocsSidebar`, `DocsToc`, `HeadingLinks`, and `MobileDocsChrome`
 - Support locale-specific files like `getting-started/en.mdx`, `getting-started/es.mdx`, and `getting-started/zh.mdx`
@@ -64,7 +65,10 @@ export const docsSource = createDocsSource({
   defaultLocale: "en",
   locales: ["en", "es", "zh"],
   hideDefaultLocaleInUrl: true,
-  sectionOrder: ["", "guides", "reference"],
+  sectionOrder: ["", "guides", "guides/search", "reference"],
+  groupLabels: {
+    "guides/search": "Search",
+  },
 });
 ```
 

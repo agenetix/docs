@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { DocsEntry, DocsNavSection } from "../types";
 import { DocsMdx } from "../mdx";
+import { flattenNavItems } from "../utils";
 
 const sectionIcons: Record<string, React.ReactNode> = {
   "": (
@@ -89,7 +90,8 @@ export default async function DocsHomePage({
 
       <section className="emcydocs-home-grid">
         {navigation.map((section) => {
-          const landingHref = section.items[0]?.href;
+          const pages = flattenNavItems([section]);
+          const landingHref = pages[0]?.href;
           return (
             <article key={section.key || "root"} className="emcydocs-home-card">
               <div className="emcydocs-home-card-head">
@@ -99,13 +101,13 @@ export default async function DocsHomePage({
                   </span>
                   <h2>{section.label}</h2>
                 </div>
-                <span className="emcydocs-home-card-count">{section.items.length} pages</span>
+                <span className="emcydocs-home-card-count">{pages.length} pages</span>
               </div>
-              {getSectionSummary(section.items) ? (
-                <p className="emcydocs-home-card-summary">{getSectionSummary(section.items)}</p>
+              {getSectionSummary(pages) ? (
+                <p className="emcydocs-home-card-summary">{getSectionSummary(pages)}</p>
               ) : null}
               <div className="emcydocs-home-card-links">
-                {section.items.slice(0, 4).map((item) => (
+                {pages.slice(0, 4).map((item) => (
                   <Link key={item.href} href={item.href} className="emcydocs-home-card-link">
                     <div>
                       <strong>{item.title}</strong>
@@ -117,9 +119,9 @@ export default async function DocsHomePage({
                   </Link>
                 ))}
               </div>
-              {section.items.length > 4 && landingHref ? (
+              {pages.length > 4 && landingHref ? (
                 <Link href={landingHref} className="emcydocs-home-card-more">
-                  Browse {section.items.length} pages in {section.label}
+                  Browse {pages.length} pages in {section.label}
                 </Link>
               ) : null}
             </article>
@@ -131,7 +133,7 @@ export default async function DocsHomePage({
 }
 
 function getDefaultQuickLinks(navigation: DocsNavSection[]) {
-  const flat = navigation.flatMap((section) => section.items);
+  const flat = flattenNavItems(navigation);
   const picks = [
     flat.find((item) => item.slugs.join("/").includes("getting-started")),
     flat.find((item) => item.slugs.join("/").includes("component")),

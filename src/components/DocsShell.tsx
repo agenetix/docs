@@ -10,6 +10,7 @@ import type {
 } from "../types";
 import { resolveDocsTheme } from "../theme";
 import { useOptionalDocsTheme } from "../theme-provider";
+import { flattenNavItems } from "../utils";
 import DocsSearchPalette from "./DocsSearchPalette";
 import DocsSearchTrigger from "./DocsSearchTrigger";
 import DocsSidebar from "./DocsSidebar";
@@ -55,9 +56,7 @@ export default function DocsShell({
   }, [isNavOpen]);
 
   const currentTitle = useMemo(() => {
-    const current = navigation
-      .flatMap((section) => section.items)
-      .find((item) => item.href === pathname);
+    const current = flattenNavItems(navigation).find((item) => item.href === pathname);
 
     return current?.title ?? "Documentation";
   }, [navigation, pathname]);

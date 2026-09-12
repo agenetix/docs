@@ -20,3 +20,11 @@ Usa el frontmatter `order` para controlar el orden dentro de una seccion.
 ## Secciones
 
 El primer segmento de la ruta normalmente se convierte en la clave de seccion. Eso mantiene la navegacion guiada principalmente por el sistema de archivos, mientras sigue permitiendo configurar etiquetas y orden en la fuente.
+
+## Grupos anidados
+
+El segundo segmento de la ruta se convierte en un grupo cuando la pagina es mas profunda que `seccion/pagina`. Tambien puedes definirlo en el frontmatter con `group`. `sectionOrder` acepta claves `seccion/grupo` para ordenar grupos. El sidebar contrae cada seccion en escritorio y movil, y abre la seccion y el grupo de la pagina actual.
+
+## Ocultar una pagina del sidebar
+
+`sidebar: false` deja la pagina enrutada y buscable, pero fuera de la navegacion.

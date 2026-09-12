@@ -20,3 +20,31 @@ Use frontmatter `order` to control the order inside a section.
 ## Sections
 
 The first path segment usually becomes the section key. That keeps navigation mostly filesystem-driven, while still allowing labels and ordering to be configured at the source level.
+
+## Nested groups
+
+A second path segment becomes a group when the page is deeper than `section/page`. You can also set it explicitly:
+
+```mdx
+---
+title: Google sign-in
+section: sign-in
+group: social
+---
+```
+
+Configure labels and group order on the source:
+
+```ts
+createDocsSource({
+  sectionLabels: { "sign-in": "Sign-in" },
+  groupLabels: { "sign-in/social": "Social" },
+  sectionOrder: ["sign-in", "sign-in/social"],
+});
+```
+
+`sectionOrder` entries of the form `section/group` order groups inside that section. The sidebar collapses every section on desktop and mobile, and expands the section and group that contain the current page.
+
+## Hide a page from the sidebar
+
+Set `sidebar: false` to keep a page routable and searchable without listing it in the navigation. Prev/next links skip those pages.

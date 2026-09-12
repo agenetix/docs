@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import DocsSidebar from "../src/components/DocsSidebar";
 import DocsToc from "../src/components/DocsToc";
@@ -22,12 +22,65 @@ const navigation: DocsNavSection[] = [
         order: 1,
         section: "getting-started",
         sectionLabel: "Getting Started",
+        group: null,
+        groupLabel: null,
+        sidebar: true,
         locale: "en",
         contentLocale: "en",
         availableLocales: ["en"],
         isHome: false,
       },
     ],
+    groups: [
+      {
+        key: "social",
+        label: "Social",
+        items: [
+          {
+            slug: "getting-started/google",
+            slugs: ["getting-started", "google"],
+            href: "/docs/getting-started/google",
+            title: "Google",
+            description: "Social",
+            order: 2,
+            section: "getting-started",
+            sectionLabel: "Getting Started",
+            group: "social",
+            groupLabel: "Social",
+            sidebar: true,
+            locale: "en",
+            contentLocale: "en",
+            availableLocales: ["en"],
+            isHome: false,
+          },
+        ],
+        groups: [],
+      },
+    ],
+  },
+  {
+    key: "reference",
+    label: "Reference",
+    items: [
+      {
+        slug: "reference/api",
+        slugs: ["reference", "api"],
+        href: "/docs/reference/api",
+        title: "API reference",
+        description: "API",
+        order: 1,
+        section: "reference",
+        sectionLabel: "Reference",
+        group: null,
+        groupLabel: null,
+        sidebar: true,
+        locale: "en",
+        contentLocale: "en",
+        availableLocales: ["en"],
+        isHome: false,
+      },
+    ],
+    groups: [],
   },
 ];
 
@@ -38,6 +91,21 @@ describe("docs components", () => {
     const link = screen.getByRole("link", { name: "Getting started" });
     expect(link).toHaveAttribute("href", "/docs/getting-started");
     expect(link.className).toContain("is-active");
+    expect(screen.queryByRole("link", { name: "API reference" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Google" })).not.toBeInTheDocument();
+  });
+
+  it("collapses inactive desktop sections and expands a nested group on demand", () => {
+    render(<DocsSidebar navigation={navigation} />);
+
+    fireEvent.click(screen.getByRole("button", { name: /Social/ }));
+    expect(screen.getByRole("link", { name: "Google" })).toHaveAttribute(
+      "href",
+      "/docs/getting-started/google"
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /Reference/ }));
+    expect(screen.getByRole("link", { name: "API reference" })).toBeInTheDocument();
   });
 
   it("renders the table of contents from server-provided headings", () => {
