@@ -182,6 +182,29 @@ export default function DocsLoading() {
 
 Navigation passed to `DocsLayout` should come from `docsSource.getNavigation()` — it returns metadata-only items (no MDX bodies).
 
+## Outside Next.js: `@agenetix/docs/source`
+
+The content side of the library has no framework attached. `@agenetix/docs/source` exports `createDocsSource`, `createBlogSource`, `extractHeadings`, `searchEntries`, the href and slug helpers and the content types, and nothing in its import graph touches Next.js, React DOM or a component (a test pins that). Any server that runs Node can read the same `content/docs/<slug>/<locale>.mdx` folders and get routes, navigation, headings, metadata and search back.
+
+```ts
+import path from "node:path";
+import { createDocsSource } from "@agenetix/docs/source";
+
+export const docsSource = createDocsSource({
+  contentDir: path.join(process.cwd(), "content/docs"),
+  basePath: "/docs",
+  defaultLocale: "en",
+  locales: ["en"],
+});
+
+// In an Expo Router loader, an Express handler or a build script:
+const route = docsSource.resolveRoute(slugs);          // "entry" | "redirect" | "notFound"
+const navigation = docsSource.getNavigation();          // sidebar sections, metadata only
+const metadata = docsSource.getMetadata(slugs);         // title, description, canonical
+```
+
+Rendering is yours on that side: `route.entry.content` is the MDX body, and `route.entry.headings` the table of contents. The root entry's `DocsMdx`, layouts and components stay Next.js-only.
+
 ## Theme system
 
 `DocsLayout` accepts a nested `theme` object for static theming, and it can also read live theme state from `DocsThemeProvider` when you want a runtime switcher, persisted preferences, or a theme studio.

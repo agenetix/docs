@@ -19,6 +19,10 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
+    "./source": {
+      "import": "./dist/source.js",
+      "types": "./dist/source.d.ts"
+    },
     "./theme": {
       "import": "./dist/theme.js",
       "types": "./dist/theme.d.ts"
@@ -61,7 +65,9 @@
     "i18n",
     "seo",
     "saas",
-    "agenetix"
+    "agenetix",
+    "expo",
+    "expo-router"
   ],
   "author": "Agenetix <hello@agenetix.com>",
   "license": "MIT",
