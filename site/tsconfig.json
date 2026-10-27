@@ -9,9 +9,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@agenetix/docs": ["../src/index.ts"],
-      "@agenetix/docs/*": ["../src/*"],
-      "@agenetix/docs/styles.css": ["../src/styles.css"]
+      "@agenetix/docs": ["../dist/index"],
+      "@agenetix/docs/*": ["../dist/*"],
+      "@agenetix/docs/styles.css": ["../dist/styles.css"]
     },
     "noEmit": true
   },
