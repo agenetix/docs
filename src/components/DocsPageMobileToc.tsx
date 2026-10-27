@@ -1,7 +1,7 @@
 "use client";
 
-import type { DocsHeading } from "../types";
-import InlineToc from "./mdx/InlineToc";
+import type { DocsHeading } from "../types.js";
+import InlineToc from "./mdx/InlineToc.js";
 
 export default function DocsPageMobileToc({
   headings,

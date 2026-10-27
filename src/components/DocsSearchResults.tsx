@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { RefObject } from "react";
-import type { DocsSearchResult } from "../types";
+import type { DocsSearchResult } from "../types.js";
 
 export default function DocsSearchResults({
   visibleResults,

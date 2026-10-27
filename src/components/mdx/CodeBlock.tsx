@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import CopyCodeButton from "./CopyCodeButton";
-import { LazyMermaid } from "./lazy";
+import CopyCodeButton from "./CopyCodeButton.js";
+import { LazyMermaid } from "./lazy.js";
 
 interface CodeBlockProps {
   children: ReactNode;

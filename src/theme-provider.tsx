@@ -10,8 +10,8 @@ import {
   type ReactNode,
   type SetStateAction,
 } from "react";
-import type { DocsResolvedTheme, DocsThemeConfig } from "./types";
-import { resolveDocsTheme } from "./theme";
+import type { DocsResolvedTheme, DocsThemeConfig } from "./types.js";
+import { resolveDocsTheme } from "./theme.js";
 
 interface DocsThemeContextValue {
   theme: DocsThemeConfig;

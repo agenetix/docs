@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useMemo, useRef, useState, useTransition } from "react";
-import type { DocsSearchAction, DocsSearchResponse } from "../types";
+import type { DocsSearchAction, DocsSearchResponse } from "../types.js";
 
 const EMPTY_RESPONSE: DocsSearchResponse = {
   query: "",

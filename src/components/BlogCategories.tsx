@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buildBlogDirectoryHref } from "./blog-utils";
+import { buildBlogDirectoryHref } from "./blog-utils.js";
 
 export default function BlogCategories({
   baseHref,
