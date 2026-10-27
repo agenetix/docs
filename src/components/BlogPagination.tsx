@@ -1,6 +1,6 @@
 import Link from "next/link";
-import type { BlogPaginationCopy } from "../types";
-import { buildBlogDirectoryHref } from "./blog-utils";
+import type { BlogPaginationCopy } from "../types.js";
+import { buildBlogDirectoryHref } from "./blog-utils.js";
 
 export default function BlogPagination({
   baseHref,

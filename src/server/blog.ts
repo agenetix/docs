@@ -13,7 +13,7 @@ import type {
   BlogSourceConfig,
   BlogSuggestionOptions,
   DocsHeading,
-} from "../types";
+} from "../types.js";
 import {
   buildBlogHref,
   calculateReadingTimeMinutes,
@@ -21,8 +21,8 @@ import {
   normalizeBasePath,
   slugifyHeading,
   stripMarkdown,
-} from "../utils";
-import { extractHeadings } from "./docs";
+} from "../utils.js";
+import { extractHeadings } from "./docs.js";
 
 interface ContentRecord {
   slug: string;

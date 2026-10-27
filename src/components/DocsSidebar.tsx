@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
-import type { DocsNavItem, DocsNavSection } from "../types";
-import { flattenNavItems, isActiveDocsPath } from "../utils";
+import type { DocsNavItem, DocsNavSection } from "../types.js";
+import { flattenNavItems, isActiveDocsPath } from "../utils.js";
 
 export default function DocsSidebar({
   navigation,

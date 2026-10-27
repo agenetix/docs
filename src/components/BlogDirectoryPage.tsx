@@ -3,11 +3,11 @@ import type {
   BlogDirectoryCopy,
   BlogDirectoryResponse,
   BlogPaginationCopy,
-} from "../types";
-import BlogCard from "./BlogCard";
-import BlogCategories from "./BlogCategories";
-import BlogPagination from "./BlogPagination";
-import BlogSearch from "./BlogSearch";
+} from "../types.js";
+import BlogCard from "./BlogCard.js";
+import BlogCategories from "./BlogCategories.js";
+import BlogPagination from "./BlogPagination.js";
+import BlogSearch from "./BlogSearch.js";
 
 export default function BlogDirectoryPage({
   directory,

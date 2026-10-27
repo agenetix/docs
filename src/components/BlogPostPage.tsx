@@ -1,10 +1,10 @@
 import type { ComponentType } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import type { BlogCardCopy, BlogEntry, BlogEntryMeta, BlogPostPageCopy } from "../types";
-import { DocsMdx } from "../mdx";
-import { formatBlogDate } from "./blog-utils";
-import BlogCard from "./BlogCard";
+import type { BlogCardCopy, BlogEntry, BlogEntryMeta, BlogPostPageCopy } from "../types.js";
+import { DocsMdx } from "../mdx.js";
+import { formatBlogDate } from "./blog-utils.js";
+import BlogCard from "./BlogCard.js";
 
 export default async function BlogPostPage({
   entry,

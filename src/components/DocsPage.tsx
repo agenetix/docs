@@ -1,10 +1,10 @@
 import { Suspense, type ReactNode } from "react";
 import Link from "next/link";
-import type { DocsEntry, DocsEntryMeta } from "../types";
-import { DocsMdx } from "../mdx";
-import CopyPageButton from "./CopyPageButton";
-import DocsPageMobileToc from "./DocsPageMobileToc";
-import DocsToc from "./DocsToc";
+import type { DocsEntry, DocsEntryMeta } from "../types.js";
+import { DocsMdx } from "../mdx.js";
+import CopyPageButton from "./CopyPageButton.js";
+import DocsPageMobileToc from "./DocsPageMobileToc.js";
+import DocsToc from "./DocsToc.js";
 
 export default async function DocsPage({
   entry,

@@ -3,8 +3,8 @@ import { isValidElement } from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
-import type { BlogEntry, DocsEntry } from "./types";
-import { slugifyHeading } from "./utils";
+import type { BlogEntry, DocsEntry } from "./types.js";
+import { slugifyHeading } from "./utils.js";
 import {
   Banner,
   Callout,
@@ -18,7 +18,7 @@ import {
   Pre,
   Step,
   Steps,
-} from "./components/mdx";
+} from "./components/mdx/index.js";
 import {
   LazyAccordion,
   LazyAccordionItem,
@@ -27,7 +27,7 @@ import {
   LazyTabsContent,
   LazyTabsList,
   LazyTabsTrigger,
-} from "./components/mdx/lazy";
+} from "./components/mdx/lazy.js";
 
 type MdxComponentMap = Record<string, React.ComponentType<any>>;
 

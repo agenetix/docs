@@ -9,9 +9,9 @@
  * loader, an Express handler, a build script. The Next.js shell in the root
  * entry builds on exactly these functions.
  */
-export { createDocsSource, extractHeadings, flattenNavItems, toNavItem } from "./server/docs";
-export { createBlogSource } from "./server/blog";
-export { searchEntries } from "./server/search";
+export { createDocsSource, extractHeadings, flattenNavItems, toNavItem } from "./server/docs.js";
+export { createBlogSource } from "./server/blog.js";
+export { searchEntries } from "./server/search.js";
 export {
   buildBlogHref,
   buildContentHref,
@@ -26,7 +26,7 @@ export {
   slugifyHeading,
   stripMarkdown,
   withLocalePrefix,
-} from "./utils";
+} from "./utils.js";
 export type {
   BlogDirectoryQuery,
   BlogDirectoryResponse,
@@ -50,4 +50,4 @@ export type {
   DocsSearchResult,
   DocsSource,
   DocsSourceConfig,
-} from "./types";
+} from "./types.js";
