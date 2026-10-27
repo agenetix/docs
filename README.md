@@ -203,7 +203,7 @@ const navigation = docsSource.getNavigation();          // sidebar sections, met
 const metadata = docsSource.getMetadata(slugs);         // title, description, canonical
 ```
 
-Rendering is yours on that side: `route.entry.content` is the MDX body, and `route.entry.headings` the table of contents. The root entry's `DocsMdx`, layouts and components stay Next.js-only.
+`next` is an optional peer dependency, so a consumer that only uses this entry does not install Next.js. Rendering is yours on that side: `route.entry.content` is the MDX body, and `route.entry.headings` the table of contents. The root entry's `DocsMdx`, layouts and components stay Next.js-only.
 
 ## Theme system
 
