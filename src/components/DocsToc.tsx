@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import type { DocsHeading } from "../types";
+import type { DocsHeading } from "../types.js";
 
 export default function DocsToc({
   headings,

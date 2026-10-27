@@ -14,7 +14,7 @@ import type {
   DocsSource,
   DocsSourceConfig,
   DocsHeading,
-} from "../types";
+} from "../types.js";
 import {
   buildDocsHref,
   flattenNavItems,
@@ -22,8 +22,8 @@ import {
   normalizeBasePath,
   normalizeSlugs,
   slugifyHeading,
-} from "../utils";
-import { searchEntries } from "./search";
+} from "../utils.js";
+import { searchEntries } from "./search.js";
 
 interface ContentRecord {
   slugs: string[];

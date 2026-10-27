@@ -1,4 +1,4 @@
-import type { DocsHeading, DocsNavItem, DocsNavSection } from "./types";
+import type { DocsHeading, DocsNavItem, DocsNavSection } from "./types.js";
 
 export function flattenNavItems(sections: DocsNavSection[]): DocsNavItem[] {
   return sections.flatMap((section) => [

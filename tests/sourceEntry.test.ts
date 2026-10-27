@@ -31,7 +31,8 @@ function moduleGraphOf(entry: string): string[] {
 }
 
 function resolveLocal(fromDir: string, specifier: string): string {
-  const base = path.resolve(fromDir, specifier);
+  // Source imports name the emitted .js file; the file on disk is .ts or .tsx.
+  const base = path.resolve(fromDir, specifier.replace(/\.js$/, ""));
   for (const candidate of [base, `${base}.ts`, `${base}.tsx`, path.join(base, "index.ts"), path.join(base, "index.tsx")]) {
     if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) return candidate;
   }

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { DocsSearchAction } from "../types";
-import DocsSearchResults from "./DocsSearchResults";
-import { useDocsSearch } from "./useDocsSearch";
+import type { DocsSearchAction } from "../types.js";
+import DocsSearchResults from "./DocsSearchResults.js";
+import { useDocsSearch } from "./useDocsSearch.js";
 
 export default function DocsSearchCommand({
   searchAction,

@@ -7,15 +7,15 @@ import type {
   DocsLayoutCommonProps,
   DocsLayoutSlot,
   DocsSidebarSlotProps,
-} from "../types";
-import { resolveDocsTheme } from "../theme";
-import { useOptionalDocsTheme } from "../theme-provider";
-import { flattenNavItems } from "../utils";
-import DocsSearchPalette from "./DocsSearchPalette";
-import DocsSearchTrigger from "./DocsSearchTrigger";
-import DocsSidebar from "./DocsSidebar";
-import HeadingLinks from "./HeadingLinks";
-import MobileDocsChrome from "./MobileDocsChrome";
+} from "../types.js";
+import { resolveDocsTheme } from "../theme.js";
+import { useOptionalDocsTheme } from "../theme-provider.js";
+import { flattenNavItems } from "../utils.js";
+import DocsSearchPalette from "./DocsSearchPalette.js";
+import DocsSearchTrigger from "./DocsSearchTrigger.js";
+import DocsSidebar from "./DocsSidebar.js";
+import HeadingLinks from "./HeadingLinks.js";
+import MobileDocsChrome from "./MobileDocsChrome.js";
 
 export default function DocsShell({
   navigation,

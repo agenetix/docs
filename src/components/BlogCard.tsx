@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { BlogCardCopy, BlogEntryMeta } from "../types";
-import { formatBlogDate } from "./blog-utils";
+import type { BlogCardCopy, BlogEntryMeta } from "../types.js";
+import { formatBlogDate } from "./blog-utils.js";
 
 export default function BlogCard({
   post,

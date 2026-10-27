@@ -1,5 +1,5 @@
-import type { DocsEntry, DocsHeading, DocsSearchResponse, DocsSearchResult } from "../types";
-import { stripMarkdown } from "../utils";
+import type { DocsEntry, DocsHeading, DocsSearchResponse, DocsSearchResult } from "../types.js";
+import { stripMarkdown } from "../utils.js";
 
 interface RankedDocsSearchResult extends DocsSearchResult {
   score: number;

@@ -9,7 +9,7 @@ import type {
   DocsThemeRadius,
   DocsThemeSurfaceStyle,
   DocsThemeTokens,
-} from "./types";
+} from "./types.js";
 
 type ThemeSeed = {
   backgroundHue: number;

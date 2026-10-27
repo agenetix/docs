@@ -1,7 +1,7 @@
 import Link from "next/link";
-import type { DocsEntry, DocsNavSection } from "../types";
-import { DocsMdx } from "../mdx";
-import { flattenNavItems } from "../utils";
+import type { DocsEntry, DocsNavSection } from "../types.js";
+import { DocsMdx } from "../mdx.js";
+import { flattenNavItems } from "../utils.js";
 
 const sectionIcons: Record<string, React.ReactNode> = {
   "": (
